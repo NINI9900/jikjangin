@@ -2971,6 +2971,56 @@
     /* 입력창, 배지 등 라이트 요소 잔여 보정 */
     ::selection { background: rgba(30, 111, 255, .4); }
     img { filter: brightness(.96); }
+
+    /* ===== 라이트 섹션 (다크 7 : 라이트 3 리듬) ===== */
+    .light-section {
+      background: #f5f8fd;
+      border-top: 1px solid #e3eaf4;
+      border-bottom: 1px solid #e3eaf4;
+    }
+
+    .light-section h1,
+    .light-section h2,
+    .light-section h3,
+    .light-section h4,
+    .light-section summary {
+      color: #0b1524;
+    }
+
+    .light-section p,
+    .light-section .lead,
+    .light-section li {
+      color: #55627a;
+    }
+
+    .light-section p strong,
+    .light-section .lead strong,
+    .light-section li strong {
+      color: #1257d6;
+      background: linear-gradient(transparent 64%, rgba(30, 111, 255, .16) 0);
+    }
+
+    .light-section .story-item,
+    .light-section details,
+    .light-section .tile {
+      background: #ffffff;
+      border-color: #dde5f0;
+      box-shadow: 0 10px 30px rgba(15, 40, 80, .06);
+    }
+
+    .light-section .story-item p,
+    .light-section details p {
+      color: #55627a;
+    }
+
+    .light-section .evidence-shot {
+      background: #e8edf5;
+      box-shadow: 0 14px 36px rgba(15, 40, 80, .1);
+    }
+
+    .light-section img {
+      filter: none;
+    }
   </style>
 </head>
 <body>
@@ -3090,7 +3140,7 @@
       </div>
     </section>
 
-    <section id="story">
+    <section id="story" class="light-section">
       <div class="shell">
         <div class="section-head">
           <span class="eyebrow">Instructor's story</span>
@@ -3192,7 +3242,7 @@
       </div>
     </section>
 
-    <section class="facility-section">
+    <section class="facility-section light-section">
       <div class="shell">
         <div class="section-head">
           <span class="eyebrow">Training space</span>
@@ -3337,7 +3387,7 @@
       </div>
     </section>
 
-    <section id="faq" class="faq">
+    <section id="faq" class="faq light-section">
       <div class="shell">
         <div class="section-head">
           <span class="eyebrow">FAQ</span>
