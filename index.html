@@ -194,13 +194,20 @@ a { text-decoration: none; color: inherit; }
 }
 .counter-item:last-child { border-right: none; }
 .counter-num {
-  font-size: 64px; font-weight: 900;
-  letter-spacing: -0.04em;
+  font-size: 58px; font-weight: 900;
+  letter-spacing: -0.03em;
   color: #fff;
   line-height: 1;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  white-space: nowrap;
 }
-.counter-num span { color: var(--blue); }
+.counter-num span {
+  color: var(--blue);
+  font-size: 0.62em;
+  font-weight: 900;
+  margin-left: 2px;
+  letter-spacing: -0.02em;
+}
 .counter-label { font-size: 20px; color: rgba(255,255,255,0.72); font-weight: 600; margin-top: 8px; }
 
 /* ══════════════════════════════════
@@ -437,14 +444,33 @@ a { text-decoration: none; color: inherit; }
   background: linear-gradient(180deg, #5f9bff, var(--blue));
   transform-origin: bottom;
   transform: scaleY(0);
-  transition: transform 0.9s cubic-bezier(0.22,1,0.36,1);
+  transition: transform 1.1s cubic-bezier(0.22,1,0.36,1);
 }
 .rev-card.visible .rev-bar { transform: scaleY(1); }
+.rev-item:nth-child(1) .rev-bar { transition-delay: 0.1s; }
+.rev-item:nth-child(2) .rev-bar { transition-delay: 0.28s; }
+.rev-item:nth-child(3) .rev-bar { transition-delay: 0.46s; }
+.rev-item:nth-child(4) .rev-bar { transition-delay: 0.64s; }
+.rev-item:nth-child(5) .rev-bar { transition-delay: 0.82s; }
+.rev-num, .rev-label {
+  opacity: 0; transform: translateY(10px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22,1,0.36,1);
+}
+.rev-card.visible .rev-num, .rev-card.visible .rev-label { opacity: 1; transform: translateY(0); }
+.rev-item:nth-child(1) .rev-num, .rev-item:nth-child(1) .rev-label { transition-delay: 0.55s; }
+.rev-item:nth-child(2) .rev-num, .rev-item:nth-child(2) .rev-label { transition-delay: 0.73s; }
+.rev-item:nth-child(3) .rev-num, .rev-item:nth-child(3) .rev-label { transition-delay: 0.91s; }
+.rev-item:nth-child(4) .rev-num, .rev-item:nth-child(4) .rev-label { transition-delay: 1.09s; }
+.rev-item:nth-child(5) .rev-num, .rev-item:nth-child(5) .rev-label { transition-delay: 1.27s; }
+@media (prefers-reduced-motion: reduce) {
+  .rev-bar, .rev-num, .rev-label { transition: none; transform: none; opacity: 1; }
+}
 .rev-item.highlight-rev .rev-bar { background: linear-gradient(180deg, #9cc2ff, #3d84ff); }
 .rev-num { display: block; font-size: 21px; font-weight: 900; color: #fff; letter-spacing: -0.03em; margin-bottom: 4px; }
 .rev-label { font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.68); }
 .data-counters { border: none; padding: 0; }
 .data-counters .counter-grid { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 34px; }
+.data-counters .counter-num { color: #fff; font-size: 46px; letter-spacing: -0.03em; }
 
 /* ══════════════════════════════════
    FAQ — 서브페이지 흰 카드 스타일
@@ -661,7 +687,8 @@ a { text-decoration: none; color: inherit; }
   .counter-item:nth-child(2) { border-right: none; }
   .counter-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.07); }
   .counter-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.07); }
-  .counter-num { font-size: 40px; }
+  .counter-num { font-size: 38px; margin-bottom: 6px; }
+  .counter-item { padding: 20px 8px; }
   .counter-label { font-size: 15px; }
 
   .sec-point { padding: 70px 0; }
@@ -1090,19 +1117,19 @@ a { text-decoration: none; color: inherit; }
     <div class="counter-section data-counters">
       <div class="counter-grid">
         <div class="counter-item reveal">
-          <div class="counter-num" data-target="2"><span>2</span>조 원</div>
+          <div class="counter-num">2조 원</div>
           <div class="counter-label">2024년 철거 시장 규모</div>
         </div>
         <div class="counter-item reveal reveal-delay-1">
-          <div class="counter-num" data-target="6"><span>6</span>조 원</div>
+          <div class="counter-num">6조 원</div>
           <div class="counter-label">2030년 전망 (3배 성장)</div>
         </div>
         <div class="counter-item reveal reveal-delay-2">
-          <div class="counter-num">4,115<span>개</span></div>
+          <div class="counter-num">4,115개</div>
           <div class="counter-label">전국 철거 업체 수</div>
         </div>
         <div class="counter-item reveal reveal-delay-3">
-          <div class="counter-num">2<span>만 건+</span></div>
+          <div class="counter-num">2만 건+</div>
           <div class="counter-label">연간 철거 공사</div>
         </div>
       </div>
