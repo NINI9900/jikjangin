@@ -346,12 +346,13 @@ a { text-decoration: none; color: inherit; }
 }
 .sec-safety::after {
   content: ''; position: absolute; inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: linear-gradient(180deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.62) 42%, rgba(0,0,0,0.72) 100%);
 }
 .sec-safety > .wrap { position: relative; z-index: 1; }
 .safety-head { text-align: center; margin-bottom: 60px; }
-.safety-head .sec-title span { color: #7fadff; }
-.safety-head .sec-sub { color: rgba(255,255,255,0.6); }
+.safety-head .sec-title { text-shadow: 0 2px 18px rgba(0,0,0,0.55); }
+.safety-head .sec-title span { color: #8db8ff; }
+.safety-head .sec-sub { color: rgba(255,255,255,0.82); text-shadow: 0 1px 10px rgba(0,0,0,0.5); }
 .safety-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .safety-item {
   text-align: center;
@@ -687,9 +688,9 @@ a { text-decoration: none; color: inherit; }
   .counter-item:nth-child(2) { border-right: none; }
   .counter-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.07); }
   .counter-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.07); }
-  .counter-num { font-size: 38px; margin-bottom: 6px; }
-  .counter-item { padding: 20px 8px; }
-  .counter-label { font-size: 15px; }
+  .counter-num { font-size: min(33px, 9vw); margin-bottom: 6px; }
+  .counter-item { padding: 20px 6px; min-width: 0; }
+  .counter-label { font-size: 14px; overflow-wrap: anywhere; }
 
   .sec-point { padding: 70px 0; }
   .sec-point-head { margin-bottom: 50px; }
@@ -697,6 +698,7 @@ a { text-decoration: none; color: inherit; }
   .pi-img { flex: unset; width: 100%; }
   .pi-badge { width: 44px; height: 44px; font-size: 17px; margin-bottom: 20px; }
   .pi-text h3 { font-size: 23px; }
+  .pi-text p br { display: none; }
   .pi-text p { font-size: 17px; }
 
   .sec-steps, .sec-career, .sec-faq { padding: 64px 0; }
@@ -878,7 +880,7 @@ a { text-decoration: none; color: inherit; }
       <div class="pi-text">
         <span class="pi-badge">01</span>
         <h3>기술 하나면<br>경기와 무관하게 일이 이어집니다</h3>
-        <p>현장에서 직접 판단하고 장비를 다루는 일은 AI와 기계가 대신할 수 없습니다. 노후 건물은 계속 늘고, 인테리어든 재개발이든 <strong>가장 먼저 필요한 일이 철거</strong>입니다.</p>
+        <p>현장에서 직접 판단하고 장비를 다루는 일은<br>AI와 기계가 대신할 수 없습니다.<br>노후 건물은 계속 늘고, 인테리어든 재개발이든<br><strong>가장 먼저 필요한 일이 철거</strong>입니다.</p>
       </div>
     </div>
 
@@ -887,7 +889,7 @@ a { text-decoration: none; color: inherit; }
       <div class="pi-text">
         <span class="pi-badge">02</span>
         <h3>시장은 2024년 2조 원에서<br>2030년 6조 원으로 성장 전망</h3>
-        <p>전국 철거 업체 4,115개, 연간 공사 2만 건 이상. 음식점·프랜차이즈 대비 <strong>초기 창업 비용 부담이 낮은 업종</strong>이라 처음 시작하기에도 유리합니다.</p>
+        <p>전국 철거 업체 4,115개, 연간 공사 2만 건 이상.<br>음식점·프랜차이즈 대비<br><strong>초기 창업 비용 부담이 낮은 업종</strong>이라<br>처음 시작하기에도 유리합니다.</p>
       </div>
     </div>
 
@@ -896,7 +898,7 @@ a { text-decoration: none; color: inherit; }
       <div class="pi-text">
         <span class="pi-badge">03</span>
         <h3>제대로 배워야<br>현장에서 통합니다</h3>
-        <p>제대로 배우지 않고 현장에 나오면 실수로 의뢰인이 추가 비용을 부담하게 됩니다. 13년 현장 기준 그대로, <strong>처음부터 체크리스트 기반으로</strong> 가르칩니다. 배우는 동안 실제 인건비도 지급됩니다.</p>
+        <p>제대로 배우지 않고 현장에 나오면<br>실수로 의뢰인이 추가 비용을 부담하게 됩니다.<br>13년 현장 기준 그대로, <strong>처음부터 체크리스트 기반으로</strong> 가르칩니다.<br>배우는 동안 실제 인건비도 지급됩니다.</p>
       </div>
     </div>
   </div>
