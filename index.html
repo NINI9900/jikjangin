@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- build: edu-v9 (section reorder) -->
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -194,7 +195,7 @@ a { text-decoration: none; color: inherit; }
 }
 .counter-item:last-child { border-right: none; }
 .counter-num {
-  font-size: 58px; font-weight: 900;
+  font-size: clamp(30px, 4.5vw, 58px); font-weight: 900;
   letter-spacing: -0.03em;
   color: #fff;
   line-height: 1;
@@ -471,7 +472,7 @@ a { text-decoration: none; color: inherit; }
 .rev-label { font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.68); }
 .data-counters { border: none; padding: 0; }
 .data-counters .counter-grid { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 34px; }
-.data-counters .counter-num { color: #fff; font-size: 46px; letter-spacing: -0.03em; }
+.data-counters .counter-num { color: #fff; font-size: clamp(25px, 3.6vw, 46px); letter-spacing: -0.03em; }
 
 /* ══════════════════════════════════
    FAQ — 서브페이지 흰 카드 스타일
@@ -689,8 +690,9 @@ a { text-decoration: none; color: inherit; }
   .counter-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.07); }
   .counter-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.07); }
   .counter-num { font-size: min(33px, 9vw); margin-bottom: 6px; }
+  .data-counters .counter-num { font-size: min(29px, 8vw); letter-spacing: -0.02em; }
   .counter-item { padding: 20px 6px; min-width: 0; }
-  .counter-label { font-size: 14px; overflow-wrap: anywhere; }
+  .counter-label { font-size: 14px; word-break: keep-all; overflow-wrap: break-word; }
 
   .sec-point { padding: 70px 0; }
   .sec-point-head { margin-bottom: 50px; }
@@ -904,6 +906,42 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
+<!-- ════ CAREER — 수료 후 진로 ════ -->
+<section class="sec-career">
+  <div class="wrap">
+    <div class="career-head reveal">
+      <span class="sec-label">After Course</span>
+      <h2 class="sec-title">수료 후, 두 가지 경로로<br>시작할 수 있습니다</h2>
+      <p class="sec-sub">당장 창업이 부담스럽다면 준비가 됐을 때 독립하면 됩니다. 그전까지는 본사가 함께합니다.</p>
+    </div>
+    <div class="career-grid">
+      <article class="career-card reveal">
+        <span class="career-tag">경로 A</span>
+        <h3>협력업체 파트너</h3>
+        <p>내 이름으로 일하며 일정 결정을 직접 하고 싶은 분께 맞습니다.</p>
+        <ul>
+          <li>견적의 10% 수수료만 지불</li>
+          <li>청년철거 문의 건 우선 배정</li>
+          <li>광고비 본사 부담</li>
+          <li>개인 영업 자유롭게 병행 가능</li>
+        </ul>
+      </article>
+      <article class="career-card reveal reveal-delay-1">
+        <span class="career-tag">경로 B</span>
+        <h3>직영소장 계약</h3>
+        <p>당장 창업이 부담스럽고 안정적으로 시작하고 싶은 분께 맞습니다.</p>
+        <ul>
+          <li>기본급 + 공사 건당 인센티브</li>
+          <li>수수료 없음</li>
+          <li>광고비 본사 부담</li>
+          <li>실력 쌓으면서 독립 타이밍 준비</li>
+        </ul>
+      </article>
+    </div>
+    <p class="career-note reveal">두 경로 모두 <strong>본인에게 맞는 방식으로 선택</strong>하며, 담당자가 상담을 통해 함께 결정합니다.</p>
+  </div>
+</section>
+
 <!-- ════ CURRICULUM — 교육 과정 4단계 ════ -->
 <section class="sec-steps" id="curriculum">
   <div class="wrap">
@@ -1036,42 +1074,6 @@ a { text-decoration: none; color: inherit; }
         <p>교육 기간 내 담당자가 일정·현장·생활 전반을 밀착 관리합니다.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ════ CAREER — 수료 후 진로 ════ -->
-<section class="sec-career">
-  <div class="wrap">
-    <div class="career-head reveal">
-      <span class="sec-label">After Course</span>
-      <h2 class="sec-title">수료 후, 두 가지 경로로<br>시작할 수 있습니다</h2>
-      <p class="sec-sub">당장 창업이 부담스럽다면 준비가 됐을 때 독립하면 됩니다. 그전까지는 본사가 함께합니다.</p>
-    </div>
-    <div class="career-grid">
-      <article class="career-card reveal">
-        <span class="career-tag">경로 A</span>
-        <h3>협력업체 파트너</h3>
-        <p>내 이름으로 일하며 일정 결정을 직접 하고 싶은 분께 맞습니다.</p>
-        <ul>
-          <li>견적의 10% 수수료만 지불</li>
-          <li>청년철거 문의 건 우선 배정</li>
-          <li>광고비 본사 부담</li>
-          <li>개인 영업 자유롭게 병행 가능</li>
-        </ul>
-      </article>
-      <article class="career-card reveal reveal-delay-1">
-        <span class="career-tag">경로 B</span>
-        <h3>직영소장 계약</h3>
-        <p>당장 창업이 부담스럽고 안정적으로 시작하고 싶은 분께 맞습니다.</p>
-        <ul>
-          <li>기본급 + 공사 건당 인센티브</li>
-          <li>수수료 없음</li>
-          <li>광고비 본사 부담</li>
-          <li>실력 쌓으면서 독립 타이밍 준비</li>
-        </ul>
-      </article>
-    </div>
-    <p class="career-note reveal">두 경로 모두 <strong>본인에게 맞는 방식으로 선택</strong>하며, 담당자가 상담을 통해 함께 결정합니다.</p>
   </div>
 </section>
 
