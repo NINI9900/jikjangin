@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: edu-v10 (trust & conversion) -->
+<!-- build: edu-v12 (curriculum sync) -->
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -73,7 +73,17 @@ a { text-decoration: none; color: inherit; }
   display: flex; align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-  transition: background 0.3s;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+.gnav.scrolled {
+  background: rgba(0, 0, 0, 0.88);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.07);
+}
+.gnav.scrolled[data-theme="light"] {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08), 0 6px 24px rgba(0,0,0,0.06);
 }
 .gnav-logo img { height: 26px; display: block; filter: brightness(0) invert(1); }
 .gnav-links { display: flex; gap: 51px; }
@@ -878,7 +888,7 @@ a { text-decoration: none; color: inherit; }
     </div>
     <div class="counter-item reveal reveal-delay-2">
       <div class="counter-num" data-target="4">4<span>단계</span></div>
-      <div class="counter-label">이론→실습→현장→창업</div>
+      <div class="counter-label">이론→세트장→현장→창업</div>
     </div>
     <div class="counter-item reveal reveal-delay-3">
       <div class="counter-num" data-target="8">8<span>주+</span></div>
@@ -967,7 +977,7 @@ a { text-decoration: none; color: inherit; }
     <div class="steps-head reveal">
       <span class="sec-label">Curriculum</span>
       <h2 class="sec-title">교육 과정 4단계</h2>
-      <p class="sec-sub">철거 ALL-IN-ONE 클래스는 이론 → 세트장 실습 → 실제 현장 → 창업 순서로 촘촘하게 진행됩니다.</p>
+      <p class="sec-sub">철거 ALL-IN-ONE 클래스는 실습 이론(1주차) → 세트장 교육(2~4주차) → 실제 현장 → 창업 순서로 진행됩니다.</p>
     </div>
     <div class="steps-grid">
       <div class="step-cell step-img-cell reveal">
@@ -975,25 +985,25 @@ a { text-decoration: none; color: inherit; }
       </div>
       <div class="step-cell reveal reveal-delay-1">
         <div class="step-num">STEP 01</div>
-        <span class="step-meta">2주 · 4일</span>
-        <h4>이론 교육 — 기초부터 탄탄하게</h4>
-        <p>보건교육 이수부터 철거 장비, 소방·전기·설비, 목공·경량·마감재 이론을 익힙니다.</p>
+        <span class="step-meta">1주차 · 실습 이론</span>
+        <h4>실습 이론 — 기초부터 탄탄하게</h4>
+        <p>철거의 종류와 장비별 사용 기준, 전기·설비·목공·마감재 실무 기초를 배우고 기초안전보건교육 이수증을 취득합니다.</p>
       </div>
       <div class="step-cell reveal reveal-delay-2">
         <div class="step-num">STEP 02</div>
-        <span class="step-meta">2주 · 4일</span>
-        <h4>세트장 실습 — 현장 전 충분히 연습</h4>
-        <p>공구 사용, 소방·전기·설비 실습, 목공·마감재 시공, 폐기물 반출과 분류를 반복합니다.</p>
+        <span class="step-meta">2~4주차 · 세트장 교육</span>
+        <h4>세트장 교육 — 현장 전 충분히 연습</h4>
+        <p>기본 공구·전문 장비 실습부터 급수·배수·전기·가벽·천장 시공, 마감재 실습, 폐기물 반출과 처리장 답사까지 주차별로 익힙니다.</p>
       </div>
       <div class="step-cell reveal">
         <div class="step-num">STEP 03</div>
-        <span class="step-meta">8주 · 상시 배치</span>
+        <span class="step-meta">이후 8주 · 실제 현장</span>
         <h4>실제 현장 교육 — 진짜 현장에서 실전</h4>
         <p>공구 실전 사용, 소방·철거·설비 실전, 원상복구, 폐기물 처리와 실제 견적 산출까지 경험합니다.</p>
       </div>
       <div class="step-cell reveal reveal-delay-1">
         <div class="step-num">STEP 04</div>
-        <span class="step-meta">1일</span>
+        <span class="step-meta">수료 전 · 1일</span>
         <h4>창업 교육 — 사업 시작을 위한 모든 것</h4>
         <p>사업자 등록, 통장 개설, 세금계산서 발급, 결제 방법, 마케팅·고객 모집, 견적서·계약서 양식을 배웁니다.</p>
       </div>
@@ -1191,7 +1201,7 @@ a { text-decoration: none; color: inherit; }
       </details>
       <details>
         <summary>교육 기간은 얼마나 걸리나요?</summary>
-        <p>이론 교육 2주(주 2일), 세트장 실습 2주(주 2일), 실제 현장 교육 약 8주, 창업 교육 1일로 구성되며 전체 약 3개월 내외입니다. 개인 숙련도와 기수 일정에 따라 조정될 수 있습니다.</p>
+        <p>이론 및 실습 교육은 총 4주로, 1주차는 실습 이론, 2~4주차는 세트장 교육으로 진행됩니다. 기본 일정은 매주 화·목 오전 10시~오후 4시이며 1주차에만 금요일 일정이 추가됩니다. 이후 실제 현장 교육 약 8주와 창업 교육 1일이 이어져 전체 약 3개월 내외이고, 개인 숙련도와 기수 일정에 따라 조정될 수 있습니다.</p>
       </details>
       <details>
         <summary>초보자도 참여할 수 있나요?</summary>
@@ -1203,7 +1213,7 @@ a { text-decoration: none; color: inherit; }
       </details>
       <details>
         <summary>현장 인건비는 언제부터 지급되나요?</summary>
-        <p>세트장 실습을 마치고 실제 현장에 배치된 뒤, 기본 작업이 숙달되었다고 판단되는 시점부터 지급이 시작됩니다. 지급 시점과 기준 금액은 기수·현장 상황에 따라 달라질 수 있어 상담 시 구체적으로 안내드립니다.</p>
+        <p>세트장 교육을 마치고 실제 현장에 배치된 뒤, 기본 작업이 숙달되었다고 판단되는 시점부터 지급이 시작됩니다. 지급 시점과 기준 금액은 기수·현장 상황에 따라 달라질 수 있어 상담 시 구체적으로 안내드립니다.</p>
       </details>
       <details>
         <summary>수료 후 바로 창업할 수 있나요?</summary>
@@ -1337,6 +1347,7 @@ function getBrightness(rgbStr) {
   return 0.299 * m[0] + 0.587 * m[1] + 0.114 * m[2];
 }
 function updateNavTheme() {
+  gnav.classList.toggle('scrolled', window.scrollY > 24);
   const y = gnav.offsetHeight + 2;
   const cx = window.innerWidth / 2;
   const points = [cx * 0.25, cx, cx * 1.75].map(x => document.elementFromPoint(x, y)).filter(Boolean);
