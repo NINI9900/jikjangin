@@ -516,6 +516,7 @@ a { text-decoration: none; color: inherit; }
 .sec-faq summary::after {
   content: "+"; color: var(--blue);
   font-size: 22px; font-weight: 500; flex-shrink: 0;
+  width: 22px; text-align: center;
 }
 .sec-faq details[open] summary::after { content: "−"; }
 .sec-faq details p {
@@ -932,13 +933,13 @@ a { text-decoration: none; color: inherit; }
 ══════════════════════════════════ */
 @media (max-width: 860px) {
   body { padding-bottom: 58px; }
-  .gnav { padding: 0 20px; }
-  .sec-title { font-size: 30px; letter-spacing: -0.04em; line-height: 1.3; }
+  .gnav { padding: 0 20px; height: 60px; }
+  .sec-title { font-size: clamp(22px, 6.4vw, 28px); letter-spacing: -0.04em; line-height: 1.3; }
   .sec-label { font-size: 14px; letter-spacing: 4px; margin-bottom: 14px; }
   .sec-sub { font-size: 17px; }
 
   .sub-hero { padding: 118px 24px 60px; }
-  .sub-hero h1 { font-size: 34px; line-height: 1.3; }
+  .sub-hero h1 { font-size: clamp(24px, 7.2vw, 32px); line-height: 1.3; }
   .sub-hero p { font-size: 17px; margin-bottom: 28px; }
   .sub-hero .eyebrow { font-size: 13px; }
   .sub-hero-btns .btn-cta-white,
@@ -970,7 +971,7 @@ a { text-decoration: none; color: inherit; }
   .step-img-cell { min-height: 200px !important; max-height: 240px; }
 
   .sec-pdark { padding: 64px 0; }
-  .pdark-head .sec-title { font-size: 30px; line-height: 1.3; }
+  .pdark-head .sec-title { font-size: clamp(22px, 6.4vw, 28px); line-height: 1.3; }
   .pdark-cards { grid-template-columns: 1fr; }
   .pd-card, .pd-card-white { min-height: 440px; }
 
@@ -1022,7 +1023,7 @@ a { text-decoration: none; color: inherit; }
   .ai-head { margin-bottom: 28px; }
   .ai-note { font-size: 18px; margin: 28px auto 20px; }
   .risk-head { margin-bottom: 28px; }
-  .risk-tab { padding: 10px 16px; font-size: 14px; }
+  .risk-tab { padding: 13px 18px; font-size: 14px; min-height: 44px; }
   .risk-panel { padding: 26px 22px; }
   .risk-panel p { font-size: 16px; }
   .risk-source { padding: 20px 18px; }
@@ -1042,7 +1043,7 @@ a { text-decoration: none; color: inherit; }
   .sec-faq details p { font-size: 16px; padding: 0 20px 18px; }
 
   .sec-cta { padding: 64px 24px; }
-  .sec-cta h2 { font-size: 30px; line-height: 1.3; }
+  .sec-cta h2 { font-size: clamp(22px, 6.4vw, 28px); line-height: 1.3; }
   .sec-cta p { font-size: 17px; margin-bottom: 30px; }
   .sec-cta .btn-cta-white, .sec-cta .btn-outline { padding: 15px 28px; font-size: 16px; }
 
@@ -1063,7 +1064,8 @@ a { text-decoration: none; color: inherit; }
   .ybban-btn { height: 44px; padding: 0 14px; font-size: 15px; flex: 1; max-width: 220px; }
   .form-group input:not([type="checkbox"]), .form-group textarea { padding: 16px 18px; font-size: 16px; }
   .privacy-check input { width: 20px; height: 20px; }
-  .sub-hero-btns { flex-direction: column; align-items: stretch; max-width: 340px; margin: 0 auto; }
+  .sub-hero-btns, .sec-cta .cta-btns { flex-direction: column; align-items: stretch; max-width: 340px; margin: 0 auto; }
+  .sec-cta .cta-btns { gap: 12px; }
 }
 
 /* ── 모바일: 햄버거 메뉴 — moco100.com 동일 ── */
@@ -1072,22 +1074,24 @@ a { text-decoration: none; color: inherit; }
   .gnav-hamburger {
     display: flex !important;
     flex-direction: column;
-    justify-content: space-between;
-    width: 28px; height: 20px;
+    justify-content: center;
+    gap: 6px;
+    width: 44px; height: 44px;
+    margin-right: -8px;
     background: none; border: none;
-    cursor: pointer; padding: 0;
+    cursor: pointer; padding: 12px 8px;
     z-index: 1001;
   }
   .gnav-hamburger span {
     display: block;
-    width: 100%; height: 2px;
+    width: 28px; height: 2px;
     background: #fff;
     border-radius: 2px;
     transition: all 0.3s;
   }
-  .gnav-hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+  .gnav-hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .gnav-hamburger.open span:nth-child(2) { opacity: 0; }
-  .gnav-hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+  .gnav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   .gnav-drawer {
     display: none;
     position: fixed;
@@ -1607,11 +1611,7 @@ a { text-decoration: none; color: inherit; }
       </details>
       <details>
         <summary>교육비는 얼마인가요?</summary>
-<<<<<<< HEAD
-        <p>교육비는 단순 가격 비교나 경쟁사 벤치마킹을 방지하기 위해 온라인에 공개하지 않고 있습니다.<br>교육비는 대면 상담 진행 후 과정 구성과 지원 조건을 확인한 뒤 안내드립니다.<br>상담과 실습장 견학은 무료이며, 충분히 설명을 들으신 후 결정하시는 것을 추천드립니다.</p>
-=======
-        <p>교육비는 대면 상담 진행 후 과정 구성과 지원 조건을 확인한 뒤 안내드립니다. 상담과 실습장 견학은 무료이며, 충분히 설명을 들으신 후 결정하시는 것을 추천드립니다.</p>
->>>>>>> e2878ac7fa4f3ac1a463e127625456d66d3288f7
+        <p>교육비는 대면 상담 진행 후 과정 구성과 지원 조건을 확인한 뒤 안내드립니다.<br>상담과 실습장 견학은 무료이며, 충분히 설명을 들으신 후 결정하시는 것을 추천드립니다.</p>
       </details>
       <details>
         <summary>교육 장소는 어디인가요?</summary>
