@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: edu-v14 (market data card) -->
+<!-- build: edu-v15 (density & flow) -->
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -745,6 +745,87 @@ a { text-decoration: none; color: inherit; }
 .ms-item span { font-size: 17px; font-weight: 600; color: rgba(255,255,255,0.62); }
 .market-data-card .data-source { margin-top: 30px; }
 
+/* ── 시장 카드 보강 요소 ── */
+.market-intro { font-size: 19px; font-weight: 600; color: rgba(255,255,255,0.78); line-height: 1.7; margin: -14px 0 38px; word-break: keep-all; }
+.ms-item em { display: block; font-style: normal; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.4); margin-top: 8px; }
+.market-insight {
+  margin-top: 40px;
+  background: rgba(27, 108, 247, 0.1);
+  border: 1px solid rgba(27, 108, 247, 0.35);
+  border-radius: 16px;
+  padding: 30px 34px;
+}
+.mi-label { display: inline-block; font-size: 14px; font-weight: 800; letter-spacing: 1.5px; color: #8db8ff; margin-bottom: 12px; }
+.market-insight p { font-size: 18px; font-weight: 500; color: rgba(255,255,255,0.78); line-height: 1.8; word-break: keep-all; }
+.market-insight p strong { color: #fff; font-weight: 700; }
+.market-source { margin-top: 26px; display: flex; flex-direction: column; gap: 6px; }
+.ms-src { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.62); }
+.ms-src a { color: #8db8ff; text-decoration: underline; text-underline-offset: 3px; }
+.ms-src a:hover { color: #b4d0ff; }
+.ms-note { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.4); }
+
+/* ── 로드맵: 체크 리스트 + 흐름 화살표 ── */
+.roadmap-cell { position: relative; }
+.roadmap-cell:not(:last-child)::after {
+  content: '→';
+  position: absolute; right: -19px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px; font-weight: 900; color: var(--blue);
+  z-index: 1;
+}
+.roadmap-list { list-style: none; margin: 0; padding: 0; }
+.roadmap-list li {
+  position: relative;
+  padding: 5px 0 5px 24px;
+  font-size: 16px; font-weight: 600; color: #555;
+  line-height: 1.5; word-break: keep-all;
+}
+.roadmap-list li::before {
+  content: '✓';
+  position: absolute; left: 2px;
+  color: var(--blue); font-weight: 900;
+}
+.roadmap-more { text-align: center; margin-top: 40px; font-size: 17px; font-weight: 700; color: var(--blue); }
+
+/* ── STEP 상세 카드 체크 리스트 ── */
+.step-list { list-style: none; margin: 0; padding: 0; }
+.step-list li {
+  position: relative;
+  padding: 6px 0 6px 26px;
+  font-size: 17px; font-weight: 600; color: #666;
+  line-height: 1.6; word-break: keep-all;
+}
+.step-list li::before {
+  content: '✓';
+  position: absolute; left: 2px;
+  color: var(--blue); font-weight: 900;
+}
+.step-cell.on .step-list li { color: rgba(255,255,255,0.8); }
+.step-cell.on .step-list li::before { color: #fff; }
+
+/* ── 제안 카드: 3개 한 줄 ── */
+.sec-proposal .career-grid { grid-template-columns: repeat(3, 1fr); }
+
+/* ── 결과 카드 3개: 크기 확대 ── */
+.result-item { padding: 44px 38px; text-align: left; }
+.ri-icon { font-size: 44px; line-height: 1; margin-bottom: 20px; }
+.result-item .rn { font-size: 18px; }
+.result-item h4 { font-size: 23px; }
+.result-item p { font-size: 17px; color: rgba(255,255,255,0.68); }
+
+/* ── 마지막 설득 문구 강조 박스 ── */
+.result-cta-box {
+  background: linear-gradient(180deg, rgba(27, 108, 247, 0.16), rgba(27, 108, 247, 0.05));
+  border: 1px solid rgba(27, 108, 247, 0.5);
+  border-radius: 22px;
+  padding: 56px 44px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.rc-main { font-size: 34px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.42; color: #fff; word-break: keep-all; }
+.rc-main span { color: #7fadff; }
+.rc-sub { margin-top: 16px; font-size: 19px; font-weight: 600; color: rgba(255,255,255,0.72); line-height: 1.7; word-break: keep-all; }
+
 /* ── FAQ 소제목: 밝은 배경 대비 확보 ── */
 .sec-faq .sec-sub { color: #1F2937; }
 
@@ -834,6 +915,24 @@ a { text-decoration: none; color: inherit; }
   .ms-item strong { font-size: 28px; }
   .ms-item span { font-size: 15px; }
   .growth-pill { font-size: 13px; padding: 8px 16px; }
+  .market-intro { font-size: 16px; margin: -6px 0 26px; }
+  .market-insight { padding: 22px 20px; margin-top: 28px; }
+  .market-insight p { font-size: 15px; }
+  .ms-src { font-size: 13px; }
+  .ms-note { font-size: 12px; }
+  .roadmap-grid { grid-template-columns: 1fr; }
+  .roadmap-cell:not(:last-child)::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -26px; transform: translateX(-50%); }
+  .roadmap-cell { margin-bottom: 14px; }
+  .roadmap-list li { font-size: 15px; }
+  .roadmap-more { font-size: 15px; margin-top: 28px; }
+  .step-list li { font-size: 15px; }
+  .sec-proposal .career-grid { grid-template-columns: 1fr; }
+  .result-item { padding: 30px 26px; }
+  .ri-icon { font-size: 34px; margin-bottom: 14px; }
+  .result-item h4 { font-size: 19px; }
+  .result-cta-box { padding: 34px 22px; }
+  .rc-main { font-size: 22px; }
+  .rc-sub { font-size: 15px; }
   .career-card { padding: 32px 26px; }
 
   .sec-data { padding: 64px 0; }
@@ -1032,6 +1131,7 @@ a { text-decoration: none; color: inherit; }
         <span class="rev-badge">MARKET DATA</span>
         <span>숫자로 보는 철거 시장</span>
       </div>
+      <p class="market-intro">철거 시장은 노후 건축물 증가, 리모델링·인테리어 수요 확대,<br>상가 원상복구 증가와 함께 꾸준히 커지고 있습니다.</p>
       <div class="market-data-flex">
         <div class="market-chart">
           <div class="rev-bars market-bars">
@@ -1052,14 +1152,23 @@ a { text-decoration: none; color: inherit; }
           <div class="ms-item reveal reveal-delay-1">
             <strong>4,115개</strong>
             <span>전국 철거 업체 수</span>
+            <em>전문건설협회 등록 기준</em>
           </div>
           <div class="ms-item reveal reveal-delay-2">
             <strong>2만 건+</strong>
             <span>연간 철거 공사</span>
+            <em>업계 등록 현황 기반 추산</em>
           </div>
         </div>
       </div>
-      <p class="data-source">시장 규모·업체 수는 공개 통계와 업계 자료를 바탕으로 한 추정치입니다.</p>
+      <div class="market-insight">
+        <div class="mi-label">시장 해석</div>
+        <p>철거는 단순 철거 작업을 넘어 <strong>안전관리, 장비 운용, 폐기물 처리, 현장 마감까지 포함되는 전문 기술 영역</strong>입니다.<br>현장 경험과 운영 노하우를 갖춘 사람에게는 <strong>기술 창업으로 확장 가능한 시장</strong>입니다.</p>
+      </div>
+      <div class="market-source">
+        <span class="ms-src">출처: <a href="https://www.dnews.co.kr/uhtml/view.jsp?idxno=202310021828369070883" target="_blank" rel="noopener">대한경제 기사</a>, 대한전문건설협회(KOSAC) 최신 등록 현황 기반</span>
+        <span class="ms-note">시장 규모 및 전망은 공개 자료와 업계 등록 현황을 바탕으로 한 참고용 수치입니다.</span>
+      </div>
     </div>
   </section>
 
@@ -1073,30 +1182,47 @@ a { text-decoration: none; color: inherit; }
     </div>
     <div class="roadmap-grid">
       <div class="roadmap-cell reveal">
-        <div class="roadmap-num">01</div>
+        <div class="roadmap-num">STEP 01</div>
         <h4>실습 이론</h4>
         <span class="roadmap-period">1주차</span>
-        <p>철거의 종류, 장비 기준, 안전보건교육 이수</p>
+        <ul class="roadmap-list">
+          <li>철거 종류 이해</li>
+          <li>장비 사용 기준</li>
+          <li>안전보건교육 이수</li>
+        </ul>
       </div>
       <div class="roadmap-cell reveal reveal-delay-1">
-        <div class="roadmap-num">02</div>
+        <div class="roadmap-num">STEP 02</div>
         <h4>세트장 교육</h4>
         <span class="roadmap-period">2~4주차</span>
-        <p>공구·장비 실습, 시공·마감재, 폐기물 반출</p>
+        <ul class="roadmap-list">
+          <li>공구·전문 장비 실습</li>
+          <li>급수·배수·전기 철거</li>
+          <li>폐기물 반출 과정 이해</li>
+        </ul>
       </div>
       <div class="roadmap-cell reveal reveal-delay-2">
-        <div class="roadmap-num">03</div>
+        <div class="roadmap-num">STEP 03</div>
         <h4>현장 실습</h4>
         <span class="roadmap-period">이후 약 8주</span>
-        <p>실제 현장 배치, 실전 작업과 견적 경험</p>
+        <ul class="roadmap-list">
+          <li>실제 현장 투입</li>
+          <li>실전 작업 감각</li>
+          <li>현장 정리·마감 경험</li>
+        </ul>
       </div>
       <div class="roadmap-cell reveal reveal-delay-3">
-        <div class="roadmap-num">04</div>
+        <div class="roadmap-num">STEP 04</div>
         <h4>창업 준비</h4>
         <span class="roadmap-period">수료 전 1일</span>
-        <p>사업자 등록, 견적서·계약서, 마케팅</p>
+        <ul class="roadmap-list">
+          <li>견적서 작성</li>
+          <li>고객 응대</li>
+          <li>사업자 등록·운영 준비</li>
+        </ul>
       </div>
     </div>
+    <p class="roadmap-more reveal">↓ 각 단계에서 배우는 상세 내용은 아래에서 이어집니다</p>
   </div>
 </section>
 
@@ -1116,25 +1242,41 @@ a { text-decoration: none; color: inherit; }
         <div class="step-num">STEP 01</div>
         <span class="step-meta">1주차 · 실습 이론</span>
         <h4>실습 이론 — 기초부터 탄탄하게</h4>
-        <p>철거의 종류와 장비 사용 기준을 배웁니다.<br>전기·설비·목공·마감재의 기본 흐름을 익힙니다.<br>기초안전보건교육 이수증 취득까지 함께 준비합니다.</p>
+        <ul class="step-list">
+          <li>철거의 종류와 장비 사용 기준을 배웁니다.</li>
+          <li>전기·설비·목공·마감재의 기본 흐름을 익힙니다.</li>
+          <li>기초안전보건교육 이수증 취득까지 함께 준비합니다.</li>
+        </ul>
       </div>
       <div class="step-cell reveal reveal-delay-2">
         <div class="step-num">STEP 02</div>
         <span class="step-meta">2~4주차 · 세트장 교육</span>
         <h4>세트장 교육 — 현장 전 충분히 연습</h4>
-        <p>공구와 전문 장비 사용법을 실습합니다.<br>급수·배수·전기·가벽·천장·마감재를 연습합니다.<br>폐기물 반출과 처리장 답사까지 주차별로 익힙니다.</p>
+        <ul class="step-list">
+          <li>공구와 전문 장비 사용법을 실습합니다.</li>
+          <li>급수·배수·전기·가벽·천장·마감재를 연습합니다.</li>
+          <li>폐기물 반출과 처리장 답사까지 주차별로 익힙니다.</li>
+        </ul>
       </div>
       <div class="step-cell reveal">
         <div class="step-num">STEP 03</div>
         <span class="step-meta">이후 8주 · 실제 현장</span>
         <h4>실제 현장 교육 — 진짜 현장에서 실전</h4>
-        <p>실제 현장에서 공구와 장비를 실전 사용합니다.<br>소방·철거·설비·원상복구를 직접 경험합니다.<br>폐기물 처리와 실제 견적 산출까지 배웁니다.</p>
+        <ul class="step-list">
+          <li>실제 현장에서 공구와 장비를 실전 사용합니다.</li>
+          <li>소방·철거·설비·원상복구를 직접 경험합니다.</li>
+          <li>폐기물 처리와 실제 견적 산출까지 배웁니다.</li>
+        </ul>
       </div>
       <div class="step-cell reveal reveal-delay-1">
         <div class="step-num">STEP 04</div>
         <span class="step-meta">수료 전 · 1일</span>
         <h4>창업 교육 — 사업 시작을 위한 모든 것</h4>
-        <p>사업자 등록과 세금계산서 발급을 준비합니다.<br>견적서·계약서 양식을 갖춥니다.<br>마케팅과 고객 모집 방법까지 안내합니다.</p>
+        <ul class="step-list">
+          <li>사업자 등록과 세금계산서 발급을 준비합니다.</li>
+          <li>견적서·계약서 양식을 갖춥니다.</li>
+          <li>마케팅과 고객 모집 방법까지 안내합니다.</li>
+        </ul>
       </div>
       <div class="step-cell on reveal reveal-delay-2">
         <div class="step-num">START</div>
@@ -1254,11 +1396,6 @@ a { text-decoration: none; color: inherit; }
         <h3>현장 경험을 더 쌓고 싶은 분</h3>
         <p>수료 후에도 실제 현장에 계속 참여하며 다양한 현장 유형과 실전 감각을 익힐 수 있습니다.</p>
       </article>
-      <article class="career-card reveal">
-        <span class="career-tag">이런 분께</span>
-        <h3>견적·고객 응대·장비 준비가 막막한 분</h3>
-        <p>본사의 견적 기준과 고객 응대 노하우를 배우고, 장비는 본사 지원으로 시작할 수 있습니다.</p>
-      </article>
       <article class="career-card reveal reveal-delay-1">
         <span class="career-tag">이런 분께</span>
         <h3>청년철거와 협력 형태로 시작하고 싶은 분</h3>
@@ -1279,32 +1416,20 @@ a { text-decoration: none; color: inherit; }
     </div>
     <div class="result-grid">
       <div class="result-item reveal">
+        <div class="ri-icon">🏗️</div>
         <div class="rn">01</div>
         <h4>실제 현장 경험 축적</h4>
         <p>다양한 유형의 현장을 직접 진행하며 경험을 쌓습니다.</p>
       </div>
       <div class="result-item reveal reveal-delay-1">
+        <div class="ri-icon">🛡️</div>
         <div class="rn">02</div>
-        <h4>장비 사용 능력 향상</h4>
-        <p>현장에서 장비를 반복 사용하며 숙련도를 높입니다.</p>
-      </div>
-      <div class="result-item reveal reveal-delay-2">
-        <div class="rn">03</div>
-        <h4>견적·고객 응대 경험</h4>
-        <p>실제 의뢰 건으로 견적 산출과 고객 응대를 익힙니다.</p>
-      </div>
-      <div class="result-item reveal">
-        <div class="rn">04</div>
-        <h4>폐기물 처리·마감 노하우</h4>
-        <p>폐기물 분류·반출과 현장 마감 기준을 몸에 익힙니다.</p>
-      </div>
-      <div class="result-item reveal reveal-delay-1">
-        <div class="rn">05</div>
         <h4>독립 전 리스크 감소</h4>
         <p>본사 배정 물량으로 시작해 초기 리스크를 줄입니다.</p>
       </div>
       <div class="result-item reveal reveal-delay-2">
-        <div class="rn">06</div>
+        <div class="ri-icon">🚀</div>
+        <div class="rn">03</div>
         <h4>창업·독립 운영 기반 마련</h4>
         <p>매출 실적과 노하우를 갖춘 뒤 독립 시점을 정합니다.</p>
       </div>
@@ -1344,8 +1469,10 @@ a { text-decoration: none; color: inherit; }
     </div>
     <p class="data-disclaimer reveal">위 매출은 일부 협력업체의 실제 사례이며, <strong>결과는 개인 역량·지역·현장 상황에 따라 달라질 수 있습니다.</strong></p>
     <div class="result-cta reveal">
-      <p>혼자 시작하기 어렵다면,<br>교육 후 협력 방식으로 먼저 경험해보세요.</p>
-      <a href="#contact" class="btn-filled">상담 신청하기</a>
+      <div class="result-cta-box">
+        <p class="rc-main">혼자 시작하기 어렵다면,<br><span>교육 후 협력 방식으로 먼저 경험해보세요.</span></p>
+        <p class="rc-sub">독립 창업 전, 실제 현장을 경험하며 리스크를 줄이고 운영 감각을 익힐 수 있습니다.</p>
+      </div>
     </div>
   </div>
 </section>
