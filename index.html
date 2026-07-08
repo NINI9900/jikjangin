@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: edu-v12 (curriculum sync) -->
+<!-- build: edu-v14 (market data card) -->
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -676,6 +676,78 @@ a { text-decoration: none; color: inherit; }
 .ybban-btn-outline { border: 1.5px solid rgba(255,255,255,0.5); color: #fff; }
 .ybban-btn:hover { opacity: 0.85; }
 
+/* ── 신뢰 지표 섹션 헤딩 ── */
+.trust-head { text-align: center; max-width: 780px; margin: 0 auto 52px; }
+.trust-head .sec-title { color: #fff; }
+
+/* ── 커리큘럼 로드맵 ── */
+.sec-roadmap { background: #fff; padding: 120px 0; }
+.sec-roadmap .sec-title { color: #111; }
+.sec-roadmap .sec-sub { color: #777; }
+.roadmap-head { text-align: center; max-width: 760px; margin: 0 auto 56px; }
+.roadmap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.roadmap-cell {
+  background: var(--gray-bg);
+  border: 1px solid #e6e8ec;
+  border-radius: 20px;
+  padding: 38px 30px;
+}
+.roadmap-num { font-size: 18px; font-weight: 800; color: var(--blue); letter-spacing: 1.5px; margin-bottom: 14px; }
+.roadmap-cell h4 { font-size: 21px; font-weight: 800; color: #111; letter-spacing: -0.02em; margin-bottom: 6px; }
+.roadmap-period { display: block; font-size: 15px; font-weight: 800; color: var(--blue); margin-bottom: 12px; }
+.roadmap-cell p { font-size: 16px; font-weight: 600; color: #777; line-height: 1.65; word-break: keep-all; }
+
+/* ── 교육내용 카드: 짧은 문장 줄바꿈 ── */
+.step-cell p { line-height: 1.8; }
+
+/* ── 제안 섹션 카드 ── */
+.sec-proposal .career-card h3 { font-size: 22px; line-height: 1.4; }
+.sec-proposal .career-card { padding: 40px 38px; }
+.sec-proposal .career-card > p { margin-bottom: 0; }
+
+/* ── 협력 결과 섹션 ── */
+.result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+.result-item {
+  background: #14161c;
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 16px;
+  padding: 32px 28px;
+}
+.result-item .rn { font-size: 17px; font-weight: 800; color: var(--blue); margin-bottom: 12px; }
+.result-item h4 { font-size: 20px; font-weight: 800; color: #fff; letter-spacing: -0.02em; line-height: 1.4; margin-bottom: 8px; }
+.result-item p { font-size: 16px; font-weight: 500; color: rgba(255,255,255,0.62); line-height: 1.65; word-break: keep-all; }
+.result-cta { text-align: center; margin-top: 50px; }
+.result-cta p { font-size: 21px; font-weight: 700; color: rgba(255,255,255,0.92); line-height: 1.6; margin-bottom: 26px; word-break: keep-all; }
+
+/* ── 시장 데이터 강조 카드 ── */
+.market-data-card { margin-top: 90px; margin-bottom: 0; }
+.market-data-flex { display: flex; gap: 52px; align-items: stretch; }
+.market-chart { flex: 1.15; }
+.market-bars { grid-template-columns: repeat(2, 1fr); max-width: 360px; margin: 0 auto; }
+.growth-badge { text-align: center; margin-top: 22px; }
+.growth-pill {
+  display: inline-block;
+  background: rgba(27, 108, 247, 0.16);
+  border: 1px solid rgba(27, 108, 247, 0.5);
+  color: #8db8ff;
+  border-radius: 100px;
+  padding: 9px 20px;
+  font-size: 15px; font-weight: 800; letter-spacing: -0.01em;
+}
+.market-side { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.ms-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 28px 32px;
+}
+.ms-item strong { display: block; font-size: 36px; font-weight: 900; color: #fff; letter-spacing: -0.03em; line-height: 1; margin-bottom: 8px; }
+.ms-item span { font-size: 17px; font-weight: 600; color: rgba(255,255,255,0.62); }
+.market-data-card .data-source { margin-top: 30px; }
+
+/* ── FAQ 소제목: 밝은 배경 대비 확보 ── */
+.sec-faq .sec-sub { color: #1F2937; }
+
 /* ── 신뢰 보강 보조 스타일 ── */
 .fine-note { display: inline-block; margin-top: 10px; font-size: 15px; font-weight: 500; color: #999; }
 .data-disclaimer {
@@ -747,6 +819,21 @@ a { text-decoration: none; color: inherit; }
   .safety-item p { font-size: 15px; }
 
   .career-grid { grid-template-columns: 1fr; }
+  .roadmap-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .roadmap-cell { padding: 26px 20px; }
+  .roadmap-cell h4 { font-size: 18px; }
+  .roadmap-cell p { font-size: 14px; }
+  .sec-roadmap { padding: 64px 0; }
+  .result-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 32px; }
+  .result-cta p { font-size: 17px; }
+  .trust-head { margin-bottom: 32px; }
+  .market-data-card { margin-top: 48px; }
+  .market-data-flex { flex-direction: column; gap: 30px; }
+  .market-bars { max-width: 260px; }
+  .ms-item { padding: 20px 24px; }
+  .ms-item strong { font-size: 28px; }
+  .ms-item span { font-size: 15px; }
+  .growth-pill { font-size: 13px; padding: 8px 16px; }
   .career-card { padding: 32px 26px; }
 
   .sec-data { padding: 64px 0; }
@@ -875,43 +962,50 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
-<!-- ════ COUNTERS ════ -->
-<div class="counter-section">
-  <div class="counter-grid">
-    <div class="counter-item reveal">
-      <div class="counter-num" data-target="13">13<span>년</span></div>
-      <div class="counter-label">강사 현장 경력</div>
+<!-- ════ TRUST — 신뢰 지표 ════ -->
+<section class="counter-section">
+  <div class="wrap">
+    <div class="trust-head reveal">
+      <span class="sec-label">Proven</span>
+      <h2 class="sec-title">검증된 현장 경험으로<br>배우는 철거 교육</h2>
+      <p class="sec-sub">13년 현장 경험과 2,000건 이상의 공사 실적을 바탕으로,<br>이론이 아닌 실제 현장에서 바로 쓰이는 철거 기술을 교육합니다.</p>
     </div>
-    <div class="counter-item reveal reveal-delay-1">
-      <div class="counter-num" data-target="2000">2,000<span>건+</span></div>
-      <div class="counter-label">누적 공사 실적</div>
-    </div>
-    <div class="counter-item reveal reveal-delay-2">
-      <div class="counter-num" data-target="4">4<span>단계</span></div>
-      <div class="counter-label">이론→세트장→현장→창업</div>
-    </div>
-    <div class="counter-item reveal reveal-delay-3">
-      <div class="counter-num" data-target="8">8<span>주+</span></div>
-      <div class="counter-label">실제 현장 교육</div>
+    <div class="counter-grid">
+      <div class="counter-item reveal">
+        <div class="counter-num" data-target="13">13<span>년</span></div>
+        <div class="counter-label">강사 현장 경력</div>
+      </div>
+      <div class="counter-item reveal reveal-delay-1">
+        <div class="counter-num" data-target="2000">2,000<span>건+</span></div>
+        <div class="counter-label">누적 공사 실적</div>
+      </div>
+      <div class="counter-item reveal reveal-delay-2">
+        <div class="counter-num" data-target="4">4<span>단계</span></div>
+        <div class="counter-label">이론 → 실습 → 현장 → 창업</div>
+      </div>
+      <div class="counter-item reveal reveal-delay-3">
+        <div class="counter-num" data-target="8">8<span>주+</span></div>
+        <div class="counter-label">실제 현장 중심 교육</div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ════ WHY — 교육이 필요한 이유 ════ -->
+<!-- ════ MARKET — 철거 시장 전망과 창업 기회 ════ -->
 <section class="sec-point">
   <div class="wrap">
     <div class="sec-point-head reveal">
-      <span class="sec-label">Why</span>
-      <h2 class="sec-title">지금, 철거 교육이<br>필요한 이유</h2>
-      <p class="sec-sub">창업을 고민 중이라면 초기 비용과 안정성이 가장 큰 걱정입니다.<br>철거 기술은 그 두 가지를 모두 해결합니다.</p>
+      <span class="sec-label">Market</span>
+      <h2 class="sec-title">철거 시장 전망과<br>창업 기회</h2>
+      <p class="sec-sub">노후 건물 증가, 인테리어·리모델링 수요 확대, 소규모 철거 시장 성장으로<br>철거 기술은 안정적인 기술 창업 아이템으로 주목받고 있습니다.</p>
     </div>
 
     <div class="point-item reveal">
       <div class="pi-img"><img src="assets/workflow-v2.png" alt="철거부터 폐기물 분류와 반출까지 진행하는 작업 현장"></div>
       <div class="pi-text">
         <span class="pi-badge">01</span>
-        <h3>기술 하나면<br>경기와 무관하게 일이 이어집니다</h3>
-        <p>현장에서 직접 판단하고 장비를 다루는 일은<br>AI와 기계가 대신할 수 없습니다.<br>노후 건물은 계속 늘고, 인테리어든 재개발이든<br><strong>가장 먼저 필요한 일이 철거</strong>입니다.</p>
+        <h3>철거는 단순 노동이 아니라<br>전문 기술입니다</h3>
+        <p>현장 구조 이해, 장비 사용, 안전관리,<br>폐기물 처리까지 갖춰야 하는 기술직입니다.<br>사람이 직접 판단해야 하는 일이라<br><strong>AI와 기계가 대신할 수 없습니다.</strong></p>
       </div>
     </div>
 
@@ -919,8 +1013,8 @@ a { text-decoration: none; color: inherit; }
       <div class="pi-img"><img src="assets/hero-worksite.png" alt="철거 시장의 성장을 보여주는 대형 현장"></div>
       <div class="pi-text">
         <span class="pi-badge">02</span>
-        <h3>시장은 2024년 2조 원에서<br>2030년 6조 원으로 성장 전망</h3>
-        <p>전국 철거 업체 4,115개, 연간 공사 2만 건 이상.<br>음식점·프랜차이즈 대비<br><strong>초기 창업 비용 부담이 낮은 업종</strong>이라<br>처음 시작하기에도 유리합니다.</p>
+        <h3>수요가 꾸준한<br>성장 시장입니다</h3>
+        <p>인테리어, 리모델링, 상가 원상복구,<br>주거 공간 철거까지 일감이 이어집니다.<br>시장 규모는 2024년 약 2조 원에서<br><strong>2030년 약 6조 원 성장이 전망</strong>됩니다.</p>
       </div>
     </div>
 
@@ -928,56 +1022,91 @@ a { text-decoration: none; color: inherit; }
       <div class="pi-img"><img src="assets/instructor-demo-v1.png" alt="안전모와 파란 조끼를 착용한 강사가 교육생들에게 철거 장비 사용법을 시범 보이는 현장 실습"></div>
       <div class="pi-text">
         <span class="pi-badge">03</span>
-        <h3>제대로 배워야<br>현장에서 통합니다</h3>
-        <p>제대로 배우지 않고 현장에 나오면<br>실수로 의뢰인이 추가 비용을 부담하게 됩니다.<br>13년 현장 기준 그대로, <strong>처음부터 체크리스트 기반으로</strong> 가르칩니다.<br>숙달 후 실제 현장 배치 시 인건비가 지급될 수 있습니다.</p>
+        <h3>제대로 배우면 소규모 창업으로<br>확장할 수 있습니다</h3>
+        <p>음식점·프랜차이즈 대비 초기 비용 부담이 낮고,<br>초기 장비와 현장 운영 노하우를 제대로 배우면<br><strong>소규모 창업으로 확장</strong>할 수 있는 업종입니다.</p>
+      </div>
+    </div>
+
+    <div class="rev-card market-data-card reveal">
+      <div class="rev-card-head">
+        <span class="rev-badge">MARKET DATA</span>
+        <span>숫자로 보는 철거 시장</span>
+      </div>
+      <div class="market-data-flex">
+        <div class="market-chart">
+          <div class="rev-bars market-bars">
+            <div class="rev-item">
+              <div class="rev-bar-wrap"><div class="rev-bar" style="--bar-h:33%"></div></div>
+              <strong class="rev-num">2조 원</strong>
+              <span class="rev-label">2024년 시장 규모</span>
+            </div>
+            <div class="rev-item highlight-rev">
+              <div class="rev-bar-wrap"><div class="rev-bar" style="--bar-h:100%"></div></div>
+              <strong class="rev-num">6조 원</strong>
+              <span class="rev-label">2030년 전망</span>
+            </div>
+          </div>
+          <div class="growth-badge"><span class="growth-pill">📈 6년간 3배 성장 전망</span></div>
+        </div>
+        <div class="market-side">
+          <div class="ms-item reveal reveal-delay-1">
+            <strong>4,115개</strong>
+            <span>전국 철거 업체 수</span>
+          </div>
+          <div class="ms-item reveal reveal-delay-2">
+            <strong>2만 건+</strong>
+            <span>연간 철거 공사</span>
+          </div>
+        </div>
+      </div>
+      <p class="data-source">시장 규모·업체 수는 공개 통계와 업계 자료를 바탕으로 한 추정치입니다.</p>
+    </div>
+  </section>
+
+<!-- ════ ROADMAP — 커리큘럼 ════ -->
+<section class="sec-roadmap" id="curriculum">
+  <div class="wrap">
+    <div class="roadmap-head reveal">
+      <span class="sec-label">Curriculum</span>
+      <h2 class="sec-title">전체 교육 로드맵</h2>
+      <p class="sec-sub">실습 이론부터 창업 준비까지, 4단계로 이어지는 전 과정입니다.</p>
+    </div>
+    <div class="roadmap-grid">
+      <div class="roadmap-cell reveal">
+        <div class="roadmap-num">01</div>
+        <h4>실습 이론</h4>
+        <span class="roadmap-period">1주차</span>
+        <p>철거의 종류, 장비 기준, 안전보건교육 이수</p>
+      </div>
+      <div class="roadmap-cell reveal reveal-delay-1">
+        <div class="roadmap-num">02</div>
+        <h4>세트장 교육</h4>
+        <span class="roadmap-period">2~4주차</span>
+        <p>공구·장비 실습, 시공·마감재, 폐기물 반출</p>
+      </div>
+      <div class="roadmap-cell reveal reveal-delay-2">
+        <div class="roadmap-num">03</div>
+        <h4>현장 실습</h4>
+        <span class="roadmap-period">이후 약 8주</span>
+        <p>실제 현장 배치, 실전 작업과 견적 경험</p>
+      </div>
+      <div class="roadmap-cell reveal reveal-delay-3">
+        <div class="roadmap-num">04</div>
+        <h4>창업 준비</h4>
+        <span class="roadmap-period">수료 전 1일</span>
+        <p>사업자 등록, 견적서·계약서, 마케팅</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════ CAREER — 수료 후 진로 ════ -->
-<section class="sec-career">
-  <div class="wrap">
-    <div class="career-head reveal">
-      <span class="sec-label">After Course</span>
-      <h2 class="sec-title">수료 후, 두 가지 경로로<br>시작할 수 있습니다</h2>
-      <p class="sec-sub">당장 창업이 부담스럽다면 준비가 됐을 때 독립하면 됩니다. 그전까지는 본사가 함께합니다.</p>
-    </div>
-    <div class="career-grid">
-      <article class="career-card reveal">
-        <span class="career-tag">경로 A</span>
-        <h3>협력업체 파트너</h3>
-        <p>내 이름으로 일하며 일정 결정을 직접 하고 싶은 분께 맞습니다.</p>
-        <ul>
-          <li>견적의 10% 수수료만 지불</li>
-          <li>청년철거 문의 건 우선 배정</li>
-          <li>광고비 본사 부담</li>
-          <li>개인 영업 자유롭게 병행 가능</li>
-        </ul>
-      </article>
-      <article class="career-card reveal reveal-delay-1">
-        <span class="career-tag">경로 B</span>
-        <h3>직영소장 계약</h3>
-        <p>당장 창업이 부담스럽고 안정적으로 시작하고 싶은 분께 맞습니다.</p>
-        <ul>
-          <li>기본급 + 공사 건당 인센티브</li>
-          <li>수수료 없음</li>
-          <li>광고비 본사 부담</li>
-          <li>실력 쌓으면서 독립 타이밍 준비</li>
-        </ul>
-      </article>
-    </div>
-    <p class="career-note reveal">두 경로 모두 <strong>본인에게 맞는 방식으로 선택</strong>하며, 담당자가 상담을 통해 함께 결정합니다.<br><span class="fine-note">세부 조건은 기수·지역·현장 상황에 따라 달라질 수 있으며, 상담 시 상세히 안내드립니다.</span></p>
-  </div>
-</section>
-
-<!-- ════ CURRICULUM — 교육 과정 4단계 ════ -->
-<section class="sec-steps" id="curriculum">
+<!-- ════ PROGRAM — 교육 내용 ════ -->
+<section class="sec-steps" id="program">
   <div class="wrap">
     <div class="steps-head reveal">
-      <span class="sec-label">Curriculum</span>
-      <h2 class="sec-title">교육 과정 4단계</h2>
-      <p class="sec-sub">철거 ALL-IN-ONE 클래스는 실습 이론(1주차) → 세트장 교육(2~4주차) → 실제 현장 → 창업 순서로 진행됩니다.</p>
+      <span class="sec-label">Program</span>
+      <h2 class="sec-title">단계별 교육 내용</h2>
+      <p class="sec-sub">각 단계에서 무엇을 배우는지, 철거 ALL-IN-ONE 클래스의 상세 구성입니다.</p>
     </div>
     <div class="steps-grid">
       <div class="step-cell step-img-cell reveal">
@@ -987,25 +1116,25 @@ a { text-decoration: none; color: inherit; }
         <div class="step-num">STEP 01</div>
         <span class="step-meta">1주차 · 실습 이론</span>
         <h4>실습 이론 — 기초부터 탄탄하게</h4>
-        <p>철거의 종류와 장비별 사용 기준, 전기·설비·목공·마감재 실무 기초를 배우고 기초안전보건교육 이수증을 취득합니다.</p>
+        <p>철거의 종류와 장비 사용 기준을 배웁니다.<br>전기·설비·목공·마감재의 기본 흐름을 익힙니다.<br>기초안전보건교육 이수증 취득까지 함께 준비합니다.</p>
       </div>
       <div class="step-cell reveal reveal-delay-2">
         <div class="step-num">STEP 02</div>
         <span class="step-meta">2~4주차 · 세트장 교육</span>
         <h4>세트장 교육 — 현장 전 충분히 연습</h4>
-        <p>기본 공구·전문 장비 실습부터 급수·배수·전기·가벽·천장 시공, 마감재 실습, 폐기물 반출과 처리장 답사까지 주차별로 익힙니다.</p>
+        <p>공구와 전문 장비 사용법을 실습합니다.<br>급수·배수·전기·가벽·천장·마감재를 연습합니다.<br>폐기물 반출과 처리장 답사까지 주차별로 익힙니다.</p>
       </div>
       <div class="step-cell reveal">
         <div class="step-num">STEP 03</div>
         <span class="step-meta">이후 8주 · 실제 현장</span>
         <h4>실제 현장 교육 — 진짜 현장에서 실전</h4>
-        <p>공구 실전 사용, 소방·철거·설비 실전, 원상복구, 폐기물 처리와 실제 견적 산출까지 경험합니다.</p>
+        <p>실제 현장에서 공구와 장비를 실전 사용합니다.<br>소방·철거·설비·원상복구를 직접 경험합니다.<br>폐기물 처리와 실제 견적 산출까지 배웁니다.</p>
       </div>
       <div class="step-cell reveal reveal-delay-1">
         <div class="step-num">STEP 04</div>
         <span class="step-meta">수료 전 · 1일</span>
         <h4>창업 교육 — 사업 시작을 위한 모든 것</h4>
-        <p>사업자 등록, 통장 개설, 세금계산서 발급, 결제 방법, 마케팅·고객 모집, 견적서·계약서 양식을 배웁니다.</p>
+        <p>사업자 등록과 세금계산서 발급을 준비합니다.<br>견적서·계약서 양식을 갖춥니다.<br>마케팅과 고객 모집 방법까지 안내합니다.</p>
       </div>
       <div class="step-cell on reveal reveal-delay-2">
         <div class="step-num">START</div>
@@ -1062,62 +1191,128 @@ a { text-decoration: none; color: inherit; }
   <div class="wrap">
     <div class="safety-head reveal">
       <span class="sec-label">Support</span>
-      <h2 class="sec-title">필요한 모든 것,<br><span>본사가 지원합니다</span></h2>
+      <h2 class="sec-title">교육부터 수료 후까지,<br><span>이렇게 지원합니다</span></h2>
       <p class="sec-sub">장비비, 숙소비, 현장 교통비를 따로 계산하지 않아도 됩니다.</p>
     </div>
     <div class="safety-grid">
       <div class="safety-item reveal">
         <div class="safety-n">01</div>
-        <div class="safety-icon">🦺</div>
-        <h4>안전장비 전체 지원</h4>
-        <p>안전화·안전모·분진 마스크·장갑까지 개인 구매 비용 없이 지원합니다.</p>
+        <div class="safety-icon">💬</div>
+        <h4>상담 및 교육 안내</h4>
+        <p>1:1 담당자가 상담부터 수료까지 일정·현장·생활 전반을 안내합니다.</p>
       </div>
       <div class="safety-item reveal reveal-delay-1">
         <div class="safety-n">02</div>
         <div class="safety-icon">🏠</div>
-        <h4>숙소 제공</h4>
-        <p>교육 기간 내내 공동 숙소 제공으로 이동 걱정 없이 집중할 수 있습니다.</p>
+        <h4>실습장·숙소 제공</h4>
+        <p>전용 실습장과 교육 기간 공동 숙소를 제공해 거주 지역과 무관하게 참여할 수 있습니다.</p>
       </div>
       <div class="safety-item reveal reveal-delay-2">
         <div class="safety-n">03</div>
-        <div class="safety-icon">💰</div>
-        <h4>현장 인건비 지급</h4>
-        <p>숙달 후 현장 배치 시점부터 인건비가 지급됩니다. 시점과 기준은 상담 시 안내드립니다.</p>
+        <div class="safety-icon">🦺</div>
+        <h4>장비·안전장비 지원</h4>
+        <p>안전화·안전모부터 공구·현장 차량까지 본사가 지원하고 사용 교육을 진행합니다.</p>
       </div>
       <div class="safety-item reveal">
         <div class="safety-n">04</div>
         <div class="safety-icon">🔨</div>
-        <h4>장비·공구 전부 지원</h4>
-        <p>철거 현장 차량과 전문 공구 일체를 본사에서 제공합니다.</p>
+        <h4>현장 동행·실습 기회</h4>
+        <p>실제 현장에 배치되어 실전 경험을 쌓고, 숙달 후에는 인건비가 지급될 수 있습니다.</p>
       </div>
       <div class="safety-item reveal reveal-delay-1">
         <div class="safety-n">05</div>
         <div class="safety-icon">📋</div>
-        <h4>창업 올인원 지원</h4>
-        <p>사업자 등록·세무·마케팅까지 수료 후 창업 전 과정을 함께합니다.</p>
+        <h4>창업 준비 상담</h4>
+        <p>사업자 등록, 세무, 견적서·계약서, 마케팅까지 창업 절차를 함께 준비합니다.</p>
       </div>
       <div class="safety-item reveal reveal-delay-2">
         <div class="safety-n">06</div>
-        <div class="safety-icon">👤</div>
-        <h4>1:1 담당자 관리</h4>
-        <p>교육 기간 내 담당자가 일정·현장·생활 전반을 밀착 관리합니다.</p>
+        <div class="safety-icon">🤝</div>
+        <h4>수료 후 협력업체 연계</h4>
+        <p>바로 독립이 부담스럽다면 협력업체 방식으로 연계해 시작할 수 있습니다.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════ DATA — 실제 데이터 / 신뢰 요소 ════ -->
+<!-- ════ PROPOSAL — 창업이 두렵다면, 청년철거의 제안 ════ -->
+<section class="sec-career sec-proposal">
+  <div class="wrap">
+    <div class="career-head reveal">
+      <span class="sec-label">Our Proposal</span>
+      <h2 class="sec-title">창업이 두렵다면,<br>청년철거의 제안</h2>
+      <p class="sec-sub">처음부터 혼자 창업하지 않아도 됩니다. 교육 이후에는 현장 경험을 더 쌓거나,<br>협력업체 방식으로 시작하며 실전 감각을 익힐 수 있습니다.</p>
+    </div>
+    <div class="career-grid">
+      <article class="career-card reveal">
+        <span class="career-tag">이런 분께</span>
+        <h3>바로 창업이 부담스러운 분</h3>
+        <p>수료 후 바로 독립하지 않아도 됩니다. 협력 방식으로 부담 없이 시작하고, 준비가 됐을 때 독립하면 됩니다.</p>
+      </article>
+      <article class="career-card reveal reveal-delay-1">
+        <span class="career-tag">이런 분께</span>
+        <h3>현장 경험을 더 쌓고 싶은 분</h3>
+        <p>수료 후에도 실제 현장에 계속 참여하며 다양한 현장 유형과 실전 감각을 익힐 수 있습니다.</p>
+      </article>
+      <article class="career-card reveal">
+        <span class="career-tag">이런 분께</span>
+        <h3>견적·고객 응대·장비 준비가 막막한 분</h3>
+        <p>본사의 견적 기준과 고객 응대 노하우를 배우고, 장비는 본사 지원으로 시작할 수 있습니다.</p>
+      </article>
+      <article class="career-card reveal reveal-delay-1">
+        <span class="career-tag">이런 분께</span>
+        <h3>청년철거와 협력 형태로 시작하고 싶은 분</h3>
+        <p>청년철거 문의 건을 배정받아 내 사업처럼 진행하면서 매출과 경험을 함께 쌓을 수 있습니다.</p>
+      </article>
+    </div>
+    <p class="career-note reveal">협력업체 파트너와 직영소장 계약 중 <strong>본인에게 맞는 방식</strong>을 상담에서 함께 결정합니다.<br><span class="fine-note">세부 조건은 기수·지역·현장 상황에 따라 달라질 수 있으며, 상담 시 상세히 안내드립니다.</span></p>
+  </div>
+</section>
+
+<!-- ════ RESULT — 협력업체 진행 시 결과 ════ -->
 <section class="sec-data">
   <div class="wrap">
     <div class="data-head reveal">
-      <span class="sec-label">Real Data</span>
-      <h2 class="sec-title">결과는 데이터로<br>보여드립니다</h2>
-      <p class="sec-sub">실제 협력업체의 6개월 매출입니다. (세금계산서 발행분 기준, 내부 정산 자료)</p>
+      <span class="sec-label">Result</span>
+      <h2 class="sec-title">협력업체로 진행하면<br>얻을 수 있는 것</h2>
+      <p class="sec-sub">독립 창업 전, 협력 방식으로 실전 기반을 만드는 과정입니다.</p>
+    </div>
+    <div class="result-grid">
+      <div class="result-item reveal">
+        <div class="rn">01</div>
+        <h4>실제 현장 경험 축적</h4>
+        <p>다양한 유형의 현장을 직접 진행하며 경험을 쌓습니다.</p>
+      </div>
+      <div class="result-item reveal reveal-delay-1">
+        <div class="rn">02</div>
+        <h4>장비 사용 능력 향상</h4>
+        <p>현장에서 장비를 반복 사용하며 숙련도를 높입니다.</p>
+      </div>
+      <div class="result-item reveal reveal-delay-2">
+        <div class="rn">03</div>
+        <h4>견적·고객 응대 경험</h4>
+        <p>실제 의뢰 건으로 견적 산출과 고객 응대를 익힙니다.</p>
+      </div>
+      <div class="result-item reveal">
+        <div class="rn">04</div>
+        <h4>폐기물 처리·마감 노하우</h4>
+        <p>폐기물 분류·반출과 현장 마감 기준을 몸에 익힙니다.</p>
+      </div>
+      <div class="result-item reveal reveal-delay-1">
+        <div class="rn">05</div>
+        <h4>독립 전 리스크 감소</h4>
+        <p>본사 배정 물량으로 시작해 초기 리스크를 줄입니다.</p>
+      </div>
+      <div class="result-item reveal reveal-delay-2">
+        <div class="rn">06</div>
+        <h4>창업·독립 운영 기반 마련</h4>
+        <p>매출 실적과 노하우를 갖춘 뒤 독립 시점을 정합니다.</p>
+      </div>
     </div>
     <div class="rev-card reveal" id="revCard">
       <div class="rev-card-head">
         <span class="rev-badge">REAL DATA</span>
-        <span>실제 협력업체 6개월 매출</span>
+        <span>실제 협력업체 6개월 매출 (세금계산서 발행분 기준, 내부 정산 자료)</span>
       </div>
       <div class="rev-bars">
         <div class="rev-item highlight-rev">
@@ -1148,26 +1343,9 @@ a { text-decoration: none; color: inherit; }
       </div>
     </div>
     <p class="data-disclaimer reveal">위 매출은 일부 협력업체의 실제 사례이며, <strong>결과는 개인 역량·지역·현장 상황에 따라 달라질 수 있습니다.</strong></p>
-    <div class="counter-section data-counters">
-      <div class="counter-grid">
-        <div class="counter-item reveal">
-          <div class="counter-num">2조 원</div>
-          <div class="counter-label">2024년 철거 시장 규모</div>
-        </div>
-        <div class="counter-item reveal reveal-delay-1">
-          <div class="counter-num">6조 원</div>
-          <div class="counter-label">2030년 전망 (3배 성장)</div>
-        </div>
-        <div class="counter-item reveal reveal-delay-2">
-          <div class="counter-num">4,115개</div>
-          <div class="counter-label">전국 철거 업체 수</div>
-        </div>
-        <div class="counter-item reveal reveal-delay-3">
-          <div class="counter-num">2만 건+</div>
-          <div class="counter-label">연간 철거 공사</div>
-        </div>
-      </div>
-      <p class="data-source">시장 규모·업체 수는 공개 통계와 업계 자료를 바탕으로 한 추정치입니다.</p>
+    <div class="result-cta reveal">
+      <p>혼자 시작하기 어렵다면,<br>교육 후 협력 방식으로 먼저 경험해보세요.</p>
+      <a href="#contact" class="btn-filled">상담 신청하기</a>
     </div>
   </div>
 </section>
