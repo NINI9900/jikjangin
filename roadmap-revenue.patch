@@ -1,7 +1,7 @@
 From f90618b3cb5c8b0630af23eff60474663bb753bb Mon Sep 17 00:00:00 2001
 From: Master <sokiss12347@gmail.com>
 Date: Thu, 9 Jul 2026 01:08:04 +0000
-Subject: [PATCH] =?UTF-8?q?=EA=B5=90=EC=9C=A1=20=EB=A1=9C=EB=93=9C?=
+Subject: [PATCH 1/2] =?UTF-8?q?=EA=B5=90=EC=9C=A1=20=EB=A1=9C=EB=93=9C?=
  =?UTF-8?q?=EB=A7=B5=20=ED=99=95=EB=8C=80=C2=B7=EA=B0=95=ED=99=94=20?=
  =?UTF-8?q?=EB=B0=8F=20=ED=98=91=EB=A0=A5=EC=97=85=EC=B2=B4=20=EC=8B=A4?=
  =?UTF-8?q?=EC=A0=9C=20=EB=A7=A4=EC=B6=9C=20=EB=8D=B0=EC=9D=B4=ED=84=B0=20?=
@@ -456,6 +456,270 @@ index c5d10d0..87ed168 100644
      <div class="result-cta reveal">
        <div class="result-cta-box">
          <p class="rc-main">혼자 시작하기 어렵다면,<br><span>교육 후 협력 방식으로 먼저 경험해보세요.</span></p>
+-- 
+2.43.0
+
+
+From 4f2a389715daafaad1e0f8b0c23fc7b78920fab7 Mon Sep 17 00:00:00 2001
+From: Master <sokiss12347@gmail.com>
+Date: Thu, 9 Jul 2026 02:20:35 +0000
+Subject: [PATCH 2/2] =?UTF-8?q?=EA=B5=90=EC=9C=A1=20=EB=A1=9C=EB=93=9C?=
+ =?UTF-8?q?=EB=A7=B5=20=EC=84=B9=EC=85=98=20=EA=B0=95=ED=99=94:=20?=
+ =?UTF-8?q?=EB=A0=88=EC=9D=B4=EC=95=84=EC=9B=83=20=ED=99=95=EB=8C=80,=20?=
+ =?UTF-8?q?=ED=98=84=EC=9E=A5=20=EC=82=AC=EC=A7=84=20=EA=B0=A4=EB=9F=AC?=
+ =?UTF-8?q?=EB=A6=AC,=20CTA=20=EB=B2=84=ED=8A=BC=ED=99=94?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- 카드 영역 최대 너비 1340px로 확대, STEP 카드 높이·패딩·폰트 확대
+- 배경 인덱스 숫자(01~04) 확대, 상단 그라데이션 액센트 바 상시 노출 + 그림자로 입체감
+- 상단 4단계 흐름 배지를 칩 스타일로 강조
+- 하단 대표 실습 사진 확대 + '실제 현장 실습' 라벨
+- 현장 사진 갤러리 4장 추가(장비 실습/현장 투입 교육/폐기물 처리 실습/견적 산출 실습), 블루 라벨
+- CTA 확대: 그라데이션 배경, 문구 계층화, 보조 문구 추가, 흰색 버튼형 CTA
+- 태블릿/모바일 반응형(갤러리 2열, 카드 1열) 처리
+
+Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Ee7D481C3KzZLx839pd4mc
+---
+ index.html | 176 ++++++++++++++++++++++++++++++++++++++---------------
+ 1 file changed, 128 insertions(+), 48 deletions(-)
+
+diff --git a/index.html b/index.html
+index 87ed168..1216843 100644
+--- a/index.html
++++ b/index.html
+@@ -764,70 +764,125 @@ a { text-decoration: none; color: inherit; }
+ .trust-head .sec-title { color: #fff; }
+ 
+ /* ── 커리큘럼 (로드맵+교육내용 통합) ── */
+-.sec-curriculum { background: var(--gray-bg); padding: 150px 0; }
+-.sec-curriculum .sec-title { color: #111; font-size: clamp(40px, 4.6vw, 58px); }
++.sec-curriculum { background: var(--gray-bg); padding: 160px 0; }
++.sec-curriculum .wrap { max-width: 1340px; }
++.sec-curriculum .sec-title { color: #111; font-size: clamp(42px, 5vw, 64px); }
+ .sec-curriculum .sec-sub { color: #888; font-size: 22px; }
+-.cur-head { text-align: center; max-width: 860px; margin: 0 auto 72px; }
++.cur-head { text-align: center; max-width: 900px; margin: 0 auto 76px; }
+ .cur-head .sec-label { letter-spacing: 6.5px; }
+ 
+-/* ── 4단계 흐름 스테퍼 ── */
++/* ── 4단계 흐름 스테퍼 (강조) ── */
+ .cur-flow {
+   display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center;
+-  gap: 10px 12px; margin-top: 34px;
+-  background: #fff; border: 1px solid #e2e2e2; border-radius: 100px;
+-  padding: 14px 26px;
+-  box-shadow: 0 4px 20px rgba(17,17,17,0.04);
++  gap: 10px 12px; margin-top: 40px;
+ }
+-.cur-flow span { font-size: 16px; font-weight: 800; color: #1a1a1a; letter-spacing: -0.02em; }
+-.cur-flow i { font-style: normal; font-size: 16px; font-weight: 900; color: var(--blue); }
++.cur-flow span {
++  font-size: 17px; font-weight: 800; color: #14315f; letter-spacing: -0.02em;
++  background: #fff; border: 1.5px solid rgba(27,108,247,0.28); border-radius: 100px;
++  padding: 12px 24px; box-shadow: 0 8px 22px rgba(27,108,247,0.10);
++}
++.cur-flow i { font-style: normal; font-size: 19px; font-weight: 900; color: var(--blue); }
+ 
+-.roadmap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
++/* ── STEP 카드: 크고 입체감 있게 ── */
++.roadmap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+ .roadmap-cell {
+   position: relative;
+   display: flex; flex-direction: column;
+   background: #fff;
+-  border: 1px solid #e2e2e2;
+-  border-radius: 22px;
+-  padding: 48px 36px 44px;
+-  min-height: 400px;
+-  transition: transform 0.25s ease, background 0.3s, box-shadow 0.25s, border-color 0.25s;
++  border: 1px solid #e6e6e6;
++  border-radius: 24px;
++  padding: 56px 40px 48px;
++  min-height: 470px;
++  box-shadow: 0 12px 34px rgba(17,17,17,0.06);
++  transition: transform 0.25s ease, box-shadow 0.25s, border-color 0.25s;
+ }
+ .roadmap-cell::before {
+-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+-  border-radius: 22px 22px 0 0;
++  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
++  border-radius: 24px 24px 0 0;
+   background: linear-gradient(90deg, #5f9bff, var(--blue));
+-  opacity: 0; transition: opacity 0.25s;
++  opacity: 0.85; transition: opacity 0.25s;
+ }
+ .roadmap-cell:hover {
+-  transform: translateY(-6px);
+-  background: #fbfcff; border-color: rgba(27,108,247,0.35);
+-  box-shadow: 0 18px 40px rgba(27,108,247,0.12);
++  transform: translateY(-8px);
++  border-color: rgba(27,108,247,0.4);
++  box-shadow: 0 26px 54px rgba(27,108,247,0.18);
+ }
+ .roadmap-cell:hover::before { opacity: 1; }
+ .roadmap-idx {
+-  position: absolute; top: 14px; right: 22px;
+-  font-size: 96px; font-weight: 900; line-height: 1;
+-  color: rgba(27,108,247,0.07); letter-spacing: -0.04em;
++  position: absolute; top: 18px; right: 26px;
++  font-size: clamp(110px, 9vw, 148px); font-weight: 900; line-height: 0.8;
++  color: rgba(27,108,247,0.08); letter-spacing: -0.05em;
+   pointer-events: none; user-select: none;
+ }
+-.roadmap-top { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+-.roadmap-cell .step-meta { margin-bottom: 0; }
+-.cur-bottom { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; margin-top: 56px; }
+-.cur-photo { border-radius: 22px; overflow: hidden; min-height: 300px; }
++.roadmap-top { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 24px; }
++.roadmap-cell .step-meta { margin-bottom: 0; font-size: 16px; padding: 5px 14px; }
++.roadmap-num { font-size: 22px; font-weight: 900; color: var(--blue); letter-spacing: 1.6px; }
++.roadmap-cell h4 { font-size: 26px; font-weight: 900; color: #111; letter-spacing: -0.03em; line-height: 1.38; margin-bottom: 24px; word-break: keep-all; }
++.roadmap-cell p { font-size: 16px; font-weight: 600; color: #777; line-height: 1.65; word-break: keep-all; }
++
++/* ── 하단: 대표 사진 + CTA ── */
++.cur-bottom { display: grid; grid-template-columns: 1.45fr 1fr; gap: 26px; margin-top: 68px; }
++.cur-photo { position: relative; border-radius: 24px; overflow: hidden; min-height: 400px; box-shadow: 0 16px 40px rgba(17,17,17,0.10); }
+ .cur-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
++.cur-photo-tag {
++  position: absolute; left: 22px; bottom: 22px;
++  font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.01em;
++  background: rgba(27,108,247,0.92); border-radius: 100px; padding: 9px 18px;
++  box-shadow: 0 8px 20px rgba(0,0,0,0.28);
++}
+ .cur-cta {
+-  background: var(--blue);
+-  border-radius: 22px;
+-  padding: 52px 48px;
++  position: relative; overflow: hidden;
++  background: linear-gradient(155deg, #2f7bff 0%, var(--blue) 55%, #1558d6 100%);
++  border-radius: 24px;
++  padding: 60px 52px;
+   display: flex; flex-direction: column; justify-content: center;
++  box-shadow: 0 20px 46px rgba(27,108,247,0.28);
++}
++.cur-cta::after {
++  content: ''; position: absolute; top: -40%; right: -20%;
++  width: 320px; height: 320px; border-radius: 50%;
++  background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 65%);
++  pointer-events: none;
++}
++.cur-cta > * { position: relative; z-index: 1; }
++.cur-cta .roadmap-num { color: rgba(255,255,255,0.72); margin-bottom: 8px; }
++.cur-cta h4 { font-size: clamp(28px, 2.4vw, 34px); font-weight: 900; color: #fff; letter-spacing: -0.03em; line-height: 1.3; margin-bottom: 14px; word-break: keep-all; }
++.cur-cta p { font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.82); line-height: 1.7; word-break: keep-all; }
++.cur-cta-fine { margin-top: 6px; font-size: 15px !important; font-weight: 600; color: rgba(255,255,255,0.68) !important; }
++.cur-cta-btn {
++  display: inline-flex; align-items: center; gap: 10px; align-self: flex-start;
++  margin-top: 30px; padding: 17px 30px;
++  background: #fff; color: var(--blue);
++  font-size: 18px; font-weight: 900; letter-spacing: -0.02em;
++  border-radius: 100px; box-shadow: 0 12px 26px rgba(0,0,0,0.18);
++  transition: transform 0.2s ease, box-shadow 0.2s ease;
++}
++.cur-cta-btn span { font-size: 22px; line-height: 1; transition: transform 0.2s ease; }
++.cur-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(0,0,0,0.24); }
++.cur-cta-btn:hover span { transform: translateX(4px); }
++
++/* ── 현장 사진 갤러리 ── */
++.cur-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 22px; }
++.cur-shot {
++  position: relative; margin: 0; border-radius: 20px; overflow: hidden;
++  aspect-ratio: 4 / 3;
++  box-shadow: 0 12px 30px rgba(17,17,17,0.08);
++  transition: transform 0.25s ease, box-shadow 0.25s ease;
++}
++.cur-shot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
++.cur-shot::after {
++  content: ''; position: absolute; inset: 0;
++  background: linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.55));
++  pointer-events: none;
+ }
+-.cur-cta .roadmap-num { color: rgba(255,255,255,0.6); }
+-.cur-cta h4 { font-size: 27px; font-weight: 900; color: #fff; letter-spacing: -0.02em; line-height: 1.35; margin-bottom: 12px; }
+-.cur-cta p { font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.78); line-height: 1.7; word-break: keep-all; }
+-.roadmap-num { font-size: 20px; font-weight: 900; color: var(--blue); letter-spacing: 1.5px; }
+-.roadmap-cell h4 { font-size: 23px; font-weight: 800; color: #111; letter-spacing: -0.02em; line-height: 1.4; margin-bottom: 20px; word-break: keep-all; }
+-
+-.roadmap-cell p { font-size: 16px; font-weight: 600; color: #777; line-height: 1.65; word-break: keep-all; }
++.cur-shot figcaption {
++  position: absolute; left: 16px; bottom: 16px; z-index: 1;
++  font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.01em;
++  background: rgba(27,108,247,0.92); border-radius: 100px; padding: 8px 16px;
++  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
++}
++.cur-shot:hover { transform: translateY(-6px); box-shadow: 0 22px 44px rgba(27,108,247,0.18); }
++.cur-shot:hover img { transform: scale(1.06); }
+ 
+ /* ── 교육내용 카드: 짧은 문장 줄바꿈 ── */
+ .step-cell p { line-height: 1.8; }
+@@ -1109,14 +1164,19 @@ a { text-decoration: none; color: inherit; }
+   .career-grid { grid-template-columns: 1fr; }
+   .sec-curriculum { padding: 76px 0; }
+   .sec-curriculum .sec-sub { font-size: 17px; }
+-  .cur-head { margin-bottom: 34px; }
+-  .cur-flow { margin-top: 22px; padding: 11px 16px; gap: 8px; }
+-  .cur-flow span, .cur-flow i { font-size: 13px; }
+-  .cur-bottom { grid-template-columns: 1fr; gap: 14px; margin-top: 22px; }
+-  .cur-photo { min-height: 200px; max-height: 240px; }
+-  .cur-cta { padding: 32px 26px; }
+-  .cur-cta h4 { font-size: 21px; }
++  .cur-head { margin-bottom: 40px; }
++  .cur-flow { margin-top: 26px; gap: 7px; }
++  .cur-flow span { font-size: 13px; padding: 9px 15px; }
++  .cur-flow i { font-size: 14px; }
++  .cur-bottom { grid-template-columns: 1fr; gap: 16px; margin-top: 30px; }
++  .cur-photo { min-height: 240px; max-height: 300px; }
++  .cur-photo-tag { left: 16px; bottom: 16px; font-size: 13px; padding: 8px 15px; }
++  .cur-cta { padding: 38px 28px; }
++  .cur-cta h4 { font-size: 24px; }
+   .cur-cta p { font-size: 15px; }
++  .cur-cta-btn { font-size: 16px; padding: 15px 24px; margin-top: 24px; align-self: stretch; justify-content: center; }
++  .cur-gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }
++  .cur-shot figcaption { left: 12px; bottom: 12px; font-size: 13px; padding: 7px 13px; }
+   .result-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 32px; }
+   .result-cta p { font-size: 17px; }
+   .trust-head { margin-bottom: 32px; }
+@@ -1520,15 +1580,35 @@ a { text-decoration: none; color: inherit; }
+     </div>
+     <div class="cur-bottom">
+       <div class="cur-photo reveal">
+-        <img src="assets/training-blue-vest-v3.png" alt="파란 조끼를 입은 교육생들의 현장 실습" loading="lazy">
++        <img src="assets/training-blue-vest-v3.png" alt="파란 조끼를 입은 교육생들이 실제 현장에서 철거 실습을 받는 모습" loading="lazy">
++        <span class="cur-photo-tag">실제 현장 실습</span>
+       </div>
+       <div class="cur-cta reveal reveal-delay-1">
+         <div class="roadmap-num">START</div>
+         <h4>기수별 선착순으로<br>진행됩니다</h4>
+         <p>현재 기수 일정과 시간표는 상담을 통해 안내드립니다.</p>
+-        <a href="#contact" class="step-link">이번 기수 모집 일정 확인하기 ></a>
++        <p class="cur-cta-fine">소수 정원으로 실습 중심 교육이 진행됩니다.</p>
++        <a href="#contact" class="cur-cta-btn">이번 기수 모집 일정 확인하기 <span>&rsaquo;</span></a>
+       </div>
+     </div>
++    <div class="cur-gallery">
++      <figure class="cur-shot reveal">
++        <img src="assets/instructor-demo-v1.png" alt="강사가 철거 장비 사용법을 시범 보이는 장비 실습 장면" loading="lazy">
++        <figcaption>장비 실습</figcaption>
++      </figure>
++      <figure class="cur-shot reveal reveal-delay-1">
++        <img src="assets/hero-worksite.png" alt="실제 철거 현장에 투입되어 진행하는 현장 투입 교육" loading="lazy">
++        <figcaption>현장 투입 교육</figcaption>
++      </figure>
++      <figure class="cur-shot reveal reveal-delay-2">
++        <img src="facility-01.jpg" alt="폐기물 반출과 처리 과정을 익히는 폐기물 처리 실습" loading="lazy">
++        <figcaption>폐기물 처리 실습</figcaption>
++      </figure>
++      <figure class="cur-shot reveal reveal-delay-3">
++        <img src="assets/field-practical-reference.png" alt="실제 견적 산출 과정을 배우는 견적 산출 실습" loading="lazy">
++        <figcaption>견적 산출 실습</figcaption>
++      </figure>
++    </div>
+   </div>
+ </section>
+ 
 -- 
 2.43.0
 
