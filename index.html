@@ -485,6 +485,88 @@ a { text-decoration: none; color: inherit; }
 .data-counters .counter-num { color: #fff; font-size: clamp(25px, 3.6vw, 46px); letter-spacing: -0.03em; }
 
 /* ══════════════════════════════════
+   실제 매출 데이터 대시보드 (재디자인)
+══════════════════════════════════ */
+.rev-panel {
+  position: relative; overflow: hidden;
+  background: linear-gradient(180deg, #171a22, #131519);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 22px;
+  padding: 52px 52px 40px;
+  margin-bottom: 26px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+}
+.rev-panel::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+  background-size: 42px 42px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 80% at 92% 0%, #000, transparent 72%);
+  mask-image: radial-gradient(ellipse 70% 80% at 92% 0%, #000, transparent 72%);
+}
+.rev-panel > * { position: relative; z-index: 1; }
+.rev-panel-head { margin-bottom: 34px; }
+.rev-panel-head .rev-badge { margin-bottom: 18px; }
+.rev-title {
+  font-size: clamp(26px, 3.3vw, 40px); font-weight: 900; color: #fff;
+  letter-spacing: -0.03em; line-height: 1.28;
+}
+.rev-title em { font-style: normal; color: #7fadff; }
+.rev-sub { margin-top: 14px; font-size: 17px; font-weight: 500; color: rgba(255,255,255,0.62); line-height: 1.7; word-break: keep-all; }
+
+.rev-table { display: flex; flex-direction: column; gap: 12px; }
+.rev-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1.25fr 2.15fr 1.7fr;
+  align-items: center; gap: 20px;
+}
+.rev-row-head { padding: 0 26px 4px; }
+.rev-row-head span {
+  font-size: 13px; font-weight: 800; letter-spacing: 1px;
+  color: rgba(255,255,255,0.4); text-transform: uppercase;
+}
+.rev-table .rev-row:not(.rev-row-head) {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 26px;
+  transition: border-color 0.25s, background 0.25s;
+}
+.rev-table .rev-row:not(.rev-row-head):hover {
+  background: rgba(27,108,247,0.08);
+  border-color: rgba(27,108,247,0.4);
+}
+.rev-tag {
+  display: inline-block; font-size: 17px; font-weight: 800; color: #fff;
+  letter-spacing: -0.01em;
+  background: rgba(27,108,247,0.16); border: 1px solid rgba(27,108,247,0.4);
+  border-radius: 100px; padding: 8px 16px;
+}
+.rev-period, .rev-feature {
+  font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.72); word-break: keep-all;
+}
+.rev-value { display: flex; align-items: baseline; gap: 4px; }
+.rev-value strong {
+  font-size: clamp(26px, 2.7vw, 34px); font-weight: 900; color: #fff;
+  letter-spacing: -0.03em; line-height: 1.05;
+}
+.rev-value i { font-style: normal; font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.66); }
+.rev-meter {
+  display: block; height: 6px; max-width: 260px; margin-top: 12px;
+  background: rgba(255,255,255,0.08); border-radius: 100px; overflow: hidden;
+}
+.rev-meter > span {
+  display: block; height: 100%; border-radius: 100px;
+  background: linear-gradient(90deg, #5f9bff, var(--blue));
+}
+.rev-cell-label { display: none; }
+.rev-source {
+  margin-top: 22px; font-size: 14px; font-weight: 500;
+  color: rgba(255,255,255,0.42); line-height: 1.7; word-break: keep-all;
+}
+
+/* ══════════════════════════════════
    FAQ — 서브페이지 흰 카드 스타일
 ══════════════════════════════════ */
 .sec-faq { background: var(--gray-bg); padding: 120px 0; }
@@ -682,34 +764,68 @@ a { text-decoration: none; color: inherit; }
 .trust-head .sec-title { color: #fff; }
 
 /* ── 커리큘럼 (로드맵+교육내용 통합) ── */
-.sec-curriculum { background: var(--gray-bg); padding: 120px 0; }
-.sec-curriculum .sec-title { color: #111; }
-.sec-curriculum .sec-sub { color: #888; }
-.cur-head { text-align: center; max-width: 760px; margin: 0 auto 56px; }
-.roadmap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.sec-curriculum { background: var(--gray-bg); padding: 150px 0; }
+.sec-curriculum .sec-title { color: #111; font-size: clamp(40px, 4.6vw, 58px); }
+.sec-curriculum .sec-sub { color: #888; font-size: 22px; }
+.cur-head { text-align: center; max-width: 860px; margin: 0 auto 72px; }
+.cur-head .sec-label { letter-spacing: 6.5px; }
+
+/* ── 4단계 흐름 스테퍼 ── */
+.cur-flow {
+  display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center;
+  gap: 10px 12px; margin-top: 34px;
+  background: #fff; border: 1px solid #e2e2e2; border-radius: 100px;
+  padding: 14px 26px;
+  box-shadow: 0 4px 20px rgba(17,17,17,0.04);
+}
+.cur-flow span { font-size: 16px; font-weight: 800; color: #1a1a1a; letter-spacing: -0.02em; }
+.cur-flow i { font-style: normal; font-size: 16px; font-weight: 900; color: var(--blue); }
+
+.roadmap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
 .roadmap-cell {
+  position: relative;
+  display: flex; flex-direction: column;
   background: #fff;
   border: 1px solid #e2e2e2;
-  border-radius: 20px;
-  padding: 36px 28px;
-  transition: background 0.3s, box-shadow 0.2s;
+  border-radius: 22px;
+  padding: 48px 36px 44px;
+  min-height: 400px;
+  transition: transform 0.25s ease, background 0.3s, box-shadow 0.25s, border-color 0.25s;
 }
-.roadmap-cell:hover { background: #f4f7ff; box-shadow: 0 4px 16px rgba(27,108,247,0.08); }
-.roadmap-cell .step-meta { margin-bottom: 14px; }
-.cur-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
-.cur-photo { border-radius: 20px; overflow: hidden; min-height: 280px; }
+.roadmap-cell::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+  border-radius: 22px 22px 0 0;
+  background: linear-gradient(90deg, #5f9bff, var(--blue));
+  opacity: 0; transition: opacity 0.25s;
+}
+.roadmap-cell:hover {
+  transform: translateY(-6px);
+  background: #fbfcff; border-color: rgba(27,108,247,0.35);
+  box-shadow: 0 18px 40px rgba(27,108,247,0.12);
+}
+.roadmap-cell:hover::before { opacity: 1; }
+.roadmap-idx {
+  position: absolute; top: 14px; right: 22px;
+  font-size: 96px; font-weight: 900; line-height: 1;
+  color: rgba(27,108,247,0.07); letter-spacing: -0.04em;
+  pointer-events: none; user-select: none;
+}
+.roadmap-top { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+.roadmap-cell .step-meta { margin-bottom: 0; }
+.cur-bottom { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; margin-top: 56px; }
+.cur-photo { border-radius: 22px; overflow: hidden; min-height: 300px; }
 .cur-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cur-cta {
   background: var(--blue);
-  border-radius: 20px;
-  padding: 48px 46px;
+  border-radius: 22px;
+  padding: 52px 48px;
   display: flex; flex-direction: column; justify-content: center;
 }
 .cur-cta .roadmap-num { color: rgba(255,255,255,0.6); }
-.cur-cta h4 { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.02em; line-height: 1.35; margin-bottom: 12px; }
+.cur-cta h4 { font-size: 27px; font-weight: 900; color: #fff; letter-spacing: -0.02em; line-height: 1.35; margin-bottom: 12px; }
 .cur-cta p { font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.78); line-height: 1.7; word-break: keep-all; }
-.roadmap-num { font-size: 18px; font-weight: 800; color: var(--blue); letter-spacing: 1.5px; margin-bottom: 14px; }
-.roadmap-cell h4 { font-size: 20px; font-weight: 800; color: #111; letter-spacing: -0.02em; line-height: 1.4; margin-bottom: 16px; }
+.roadmap-num { font-size: 20px; font-weight: 900; color: var(--blue); letter-spacing: 1.5px; }
+.roadmap-cell h4 { font-size: 23px; font-weight: 800; color: #111; letter-spacing: -0.02em; line-height: 1.4; margin-bottom: 20px; word-break: keep-all; }
 
 .roadmap-cell p { font-size: 16px; font-weight: 600; color: #777; line-height: 1.65; word-break: keep-all; }
 
@@ -781,24 +897,25 @@ a { text-decoration: none; color: inherit; }
 .ms-note { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.4); }
 
 /* ── 로드맵: 체크 리스트 + 흐름 화살표 ── */
-.roadmap-cell { position: relative; }
 .roadmap-cell:not(:last-child)::after {
   content: '→';
-  position: absolute; right: -19px; top: 50%;
+  position: absolute; right: -23px; top: 50%;
   transform: translateY(-50%);
-  font-size: 22px; font-weight: 900; color: var(--blue);
-  z-index: 1;
+  font-size: 24px; font-weight: 900; color: var(--blue);
+  z-index: 2;
 }
 .roadmap-list { list-style: none; margin: 0; padding: 0; }
 .roadmap-list li {
   position: relative;
-  padding: 6px 0 6px 24px;
-  font-size: 15.5px; font-weight: 600; color: #666;
-  line-height: 1.5; word-break: keep-all;
+  padding: 8px 0 8px 28px;
+  font-size: 16.5px; font-weight: 600; color: #5f5f5f;
+  line-height: 1.55; word-break: keep-all;
+  border-top: 1px solid #f0f0f0;
 }
+.roadmap-list li:first-child { border-top: none; }
 .roadmap-list li::before {
   content: '✓';
-  position: absolute; left: 2px;
+  position: absolute; left: 2px; top: 8px;
   color: var(--blue); font-weight: 900;
 }
 .roadmap-more { text-align: center; margin-top: 40px; font-size: 17px; font-weight: 700; color: var(--blue); }
@@ -931,6 +1048,13 @@ a { text-decoration: none; color: inherit; }
 /* ══════════════════════════════════
    RESPONSIVE — moco100.com 동일 톤
 ══════════════════════════════════ */
+/* ── 태블릿: 로드맵 2열 ── */
+@media (max-width: 1080px) and (min-width: 861px) {
+  .roadmap-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .roadmap-cell { min-height: 340px; }
+  .roadmap-cell:not(:last-child)::after { display: none; }
+  .rev-table { grid-template-columns: 1fr; }
+}
 @media (max-width: 860px) {
   body { padding-bottom: 58px; }
   .gnav { padding: 0 20px; height: 60px; }
@@ -983,9 +1107,12 @@ a { text-decoration: none; color: inherit; }
   .safety-item p { font-size: 15px; }
 
   .career-grid { grid-template-columns: 1fr; }
-  .sec-curriculum { padding: 64px 0; }
-  .cur-head { margin-bottom: 28px; }
-  .cur-bottom { grid-template-columns: 1fr; gap: 14px; margin-top: 14px; }
+  .sec-curriculum { padding: 76px 0; }
+  .sec-curriculum .sec-sub { font-size: 17px; }
+  .cur-head { margin-bottom: 34px; }
+  .cur-flow { margin-top: 22px; padding: 11px 16px; gap: 8px; }
+  .cur-flow span, .cur-flow i { font-size: 13px; }
+  .cur-bottom { grid-template-columns: 1fr; gap: 14px; margin-top: 22px; }
   .cur-photo { min-height: 200px; max-height: 240px; }
   .cur-cta { padding: 32px 26px; }
   .cur-cta h4 { font-size: 21px; }
@@ -1005,10 +1132,12 @@ a { text-decoration: none; color: inherit; }
   .market-insight p { font-size: 15px; }
   .ms-src { font-size: 13px; }
   .ms-note { font-size: 12px; }
-  .roadmap-grid { grid-template-columns: 1fr; }
-  .roadmap-cell:not(:last-child)::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -26px; transform: translateX(-50%); }
-  .roadmap-cell { margin-bottom: 14px; }
-  .roadmap-list li { font-size: 15px; }
+  .roadmap-grid { grid-template-columns: 1fr; gap: 30px; }
+  .roadmap-cell { min-height: unset; padding: 34px 26px 30px; margin-bottom: 0; }
+  .roadmap-cell:not(:last-child)::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -24px; transform: translateX(-50%); font-size: 22px; }
+  .roadmap-idx { font-size: 74px; top: 18px; right: 18px; }
+  .roadmap-cell h4 { font-size: 21px; }
+  .roadmap-list li { font-size: 15.5px; }
   .roadmap-more { font-size: 15px; margin-top: 28px; }
   .step-list li { font-size: 15px; }
   .sec-proposal .career-grid { grid-template-columns: 1fr; }
@@ -1038,6 +1167,19 @@ a { text-decoration: none; color: inherit; }
   .rev-bar-wrap { height: 130px; }
   .rev-num { font-size: 13px; }
   .rev-label { font-size: 11px; }
+  .rev-panel { padding: 30px 20px 26px; border-radius: 18px; }
+  .rev-panel-head { margin-bottom: 24px; }
+  .rev-sub { font-size: 15px; }
+  .rev-row { grid-template-columns: 1fr; gap: 16px; padding: 22px 20px !important; }
+  .rev-row-head { display: none; }
+  .rev-cell-label {
+    display: block; font-size: 12px; font-weight: 800; letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.42); text-transform: uppercase; margin-bottom: 6px;
+  }
+  .rev-period, .rev-feature { font-size: 15.5px; }
+  .rev-value strong { font-size: 30px; }
+  .rev-meter { max-width: none; }
+  .rev-source { font-size: 13px; }
 
   .sec-faq summary { font-size: 17px; padding: 19px 20px; }
   .sec-faq details p { font-size: 16px; padding: 0 20px 18px; }
@@ -1318,11 +1460,17 @@ a { text-decoration: none; color: inherit; }
       <span class="sec-label">Curriculum</span>
       <h2 class="sec-title">전체 교육 로드맵</h2>
       <p class="sec-sub">실습 이론부터 창업 준비까지,<br>철거 ALL-IN-ONE 클래스의 4단계 구성입니다.</p>
+      <div class="cur-flow" aria-hidden="true">
+        <span>이론</span><i>→</i><span>세트장 교육</span><i>→</i><span>현장 실습</span><i>→</i><span>창업 준비</span>
+      </div>
     </div>
     <div class="roadmap-grid">
       <div class="roadmap-cell reveal">
-        <div class="roadmap-num">STEP 01</div>
-        <span class="step-meta">1주차</span>
+        <span class="roadmap-idx">01</span>
+        <div class="roadmap-top">
+          <div class="roadmap-num">STEP 01</div>
+          <span class="step-meta">1주차</span>
+        </div>
         <h4>실습 이론<br>기초부터 탄탄하게</h4>
         <ul class="roadmap-list">
           <li>철거의 종류와 장비 사용 기준</li>
@@ -1331,8 +1479,11 @@ a { text-decoration: none; color: inherit; }
         </ul>
       </div>
       <div class="roadmap-cell reveal reveal-delay-1">
-        <div class="roadmap-num">STEP 02</div>
-        <span class="step-meta">2~4주차</span>
+        <span class="roadmap-idx">02</span>
+        <div class="roadmap-top">
+          <div class="roadmap-num">STEP 02</div>
+          <span class="step-meta">2~4주차</span>
+        </div>
         <h4>세트장 교육<br>현장 전 충분히 연습</h4>
         <ul class="roadmap-list">
           <li>공구·전문 장비 사용법 실습</li>
@@ -1341,8 +1492,11 @@ a { text-decoration: none; color: inherit; }
         </ul>
       </div>
       <div class="roadmap-cell reveal reveal-delay-2">
-        <div class="roadmap-num">STEP 03</div>
-        <span class="step-meta">이후 약 8주</span>
+        <span class="roadmap-idx">03</span>
+        <div class="roadmap-top">
+          <div class="roadmap-num">STEP 03</div>
+          <span class="step-meta">이후 약 8주</span>
+        </div>
         <h4>현장 실습<br>진짜 현장에서 실전</h4>
         <ul class="roadmap-list">
           <li>실제 현장 투입, 장비 실전 사용</li>
@@ -1351,8 +1505,11 @@ a { text-decoration: none; color: inherit; }
         </ul>
       </div>
       <div class="roadmap-cell reveal reveal-delay-3">
-        <div class="roadmap-num">STEP 04</div>
-        <span class="step-meta">수료 전 1일</span>
+        <span class="roadmap-idx">04</span>
+        <div class="roadmap-top">
+          <div class="roadmap-num">STEP 04</div>
+          <span class="step-meta">수료 전 1일</span>
+        </div>
         <h4>창업 준비<br>사업 시작의 모든 것</h4>
         <ul class="roadmap-list">
           <li>사업자 등록·세금계산서 준비</li>
@@ -1553,40 +1710,63 @@ a { text-decoration: none; color: inherit; }
         <p>매출 실적과 노하우를 갖춘 뒤 독립 시점을 정합니다.</p>
       </div>
     </div>
-    <div class="rev-card reveal" id="revCard">
-      <div class="rev-card-head">
-        <span class="rev-badge">REAL DATA</span>
-        <span>실제 협력업체 6개월 매출 (세금계산서 발행분 기준, 내부 정산 자료)</span>
+    <div class="rev-panel reveal" id="revCard">
+      <div class="rev-panel-head">
+        <span class="rev-badge">REAL DATA · 실제 정산 자료 기반</span>
+        <h3 class="rev-title">2026년 협력업체 실제 매출 <em>1~2분기</em></h3>
+        <p class="rev-sub">세금계산서 발행 기준 및 내부 정산 자료를 기반으로 정리한 실제 협력업체 매출 사례입니다.</p>
       </div>
-      <div class="rev-bars">
-        <div class="rev-item highlight-rev">
-          <div class="rev-bar-wrap"><div class="rev-bar" style="--bar-h:100%"></div></div>
-          <strong class="rev-num">2억 940만</strong>
-          <span class="rev-label">협력업체 A</span>
+      <div class="rev-table">
+        <div class="rev-row rev-row-head" aria-hidden="true">
+          <span>협력업체</span>
+          <span>정산 기간</span>
+          <span>총 매출</span>
+          <span>특징</span>
         </div>
-        <div class="rev-item">
-          <div class="rev-bar-wrap"><div class="rev-bar" style="--bar-h:68%"></div></div>
-          <strong class="rev-num">1억 4,279만</strong>
-          <span class="rev-label">협력업체 B</span>
+        <div class="rev-row">
+          <div class="rev-co"><span class="rev-tag">협력업체 A</span></div>
+          <div class="rev-period"><span class="rev-cell-label">정산 기간</span>2026.01 ~ 2026.06</div>
+          <div class="rev-amount">
+            <span class="rev-cell-label">총 매출</span>
+            <span class="rev-value"><strong>213,050,599</strong><i>원</i></span>
+            <span class="rev-meter"><span style="width:98.5%"></span></span>
+          </div>
+          <div class="rev-feature"><span class="rev-cell-label">특징</span>1~2분기 누적 매출 사례</div>
         </div>
-        <div class="rev-item">
-          <div class="rev-bar-wrap"><div class="rev-bar" style="--bar-h:22%"></div></div>
-          <strong class="rev-num">4,590만</strong>
-          <span class="rev-label">협력업체 C</span>
+        <div class="rev-row">
+          <div class="rev-co"><span class="rev-tag">협력업체 B</span></div>
+          <div class="rev-period"><span class="rev-cell-label">정산 기간</span>2025.10 ~ 2026.03</div>
+          <div class="rev-amount">
+            <span class="rev-cell-label">총 매출</span>
+            <span class="rev-value"><strong>216,254,600</strong><i>원</i></span>
+            <span class="rev-meter"><span style="width:100%"></span></span>
+          </div>
+          <div class="rev-feature"><span class="rev-cell-label">특징</span>최근 6개월 매출 사례</div>
         </div>
-        <div class="rev-item">
-          <div class="rev-bar-wrap"><div class="rev-bar" style="--bar-h:18%"></div></div>
-          <strong class="rev-num">3,773만</strong>
-          <span class="rev-label">협력업체 D</span>
+        <div class="rev-row">
+          <div class="rev-co"><span class="rev-tag">협력업체 C</span></div>
+          <div class="rev-period"><span class="rev-cell-label">정산 기간</span>2026.01 ~ 2026.06</div>
+          <div class="rev-amount">
+            <span class="rev-cell-label">총 매출</span>
+            <span class="rev-value"><strong>74,525,300</strong><i>원</i></span>
+            <span class="rev-meter"><span style="width:34.5%"></span></span>
+          </div>
+          <div class="rev-feature"><span class="rev-cell-label">특징</span>1~2분기 누적 매출 사례</div>
         </div>
-        <div class="rev-item">
-          <div class="rev-bar-wrap"><div class="rev-bar" style="--bar-h:13%"></div></div>
-          <strong class="rev-num">2,678만</strong>
-          <span class="rev-label">협력업체 E</span>
+        <div class="rev-row">
+          <div class="rev-co"><span class="rev-tag">협력업체 D</span></div>
+          <div class="rev-period"><span class="rev-cell-label">정산 기간</span>2026.01 ~ 2026.06</div>
+          <div class="rev-amount">
+            <span class="rev-cell-label">총 매출</span>
+            <span class="rev-value"><strong>71,346,850</strong><i>원</i></span>
+            <span class="rev-meter"><span style="width:33.0%"></span></span>
+          </div>
+          <div class="rev-feature"><span class="rev-cell-label">특징</span>1~2분기 누적 매출 사례</div>
         </div>
       </div>
+      <p class="rev-source">※ 세금계산서 발행분과 내부 정산 자료를 기준으로 정리한 수치이며, 협력업체별 정산 기간이 상이할 수 있습니다.</p>
     </div>
-    <p class="data-disclaimer reveal">위 매출은 일부 협력업체의 실제 사례이며, <strong>결과는 개인 역량·지역·현장 상황에 따라 달라질 수 있습니다.</strong></p>
+    <p class="data-disclaimer reveal">실제 협력업체 사례이며, <strong>결과는 개인 역량·지역·현장 상황에 따라 달라질 수 있습니다.</strong></p>
     <div class="result-cta reveal">
       <div class="result-cta-box">
         <p class="rc-main">혼자 시작하기 어렵다면,<br><span>교육 후 협력 방식으로 먼저 경험해보세요.</span></p>
