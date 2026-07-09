@@ -518,8 +518,8 @@ a { text-decoration: none; color: inherit; }
 .rev-table { display: flex; flex-direction: column; gap: 12px; }
 .rev-row {
   display: grid;
-  grid-template-columns: 1.1fr 1.25fr 2.15fr 1.7fr;
-  align-items: center; gap: 20px;
+  grid-template-columns: 1fr 1.35fr 2.3fr;
+  align-items: center; gap: 24px;
 }
 .rev-row-head { padding: 0 26px 4px; }
 .rev-row-head span {
@@ -1819,15 +1819,14 @@ a { text-decoration: none; color: inherit; }
     <div class="rev-panel reveal" id="revCard">
       <div class="rev-panel-head">
         <span class="rev-badge">REAL DATA · 실제 정산 자료 기반</span>
-        <h3 class="rev-title">2026년 협력업체 실제 매출 <em>1~2분기</em></h3>
-        <p class="rev-sub">세금계산서 발행 기준 및 내부 정산 자료를 기반으로 정리한 실제 협력업체 매출 사례입니다.</p>
+        <h3 class="rev-title">2026년 협력업체 실제 매출</h3>
+        <p class="rev-sub">세금계산서 발행분과 현금 매출을 포함한 내부 정산 자료를 기반으로 정리한 실제 협력업체 매출 사례입니다.</p>
       </div>
       <div class="rev-table">
         <div class="rev-row rev-row-head" aria-hidden="true">
           <span>협력업체</span>
           <span>정산 기간</span>
           <span>총 매출</span>
-          <span>특징</span>
         </div>
         <div class="rev-row">
           <div class="rev-co"><span class="rev-tag">협력업체 A</span></div>
@@ -1837,7 +1836,6 @@ a { text-decoration: none; color: inherit; }
             <span class="rev-value"><strong>213,050,599</strong><i>원</i></span>
             <span class="rev-meter"><span style="width:98.5%"></span></span>
           </div>
-          <div class="rev-feature"><span class="rev-cell-label">특징</span>1~2분기 누적 매출 사례</div>
         </div>
         <div class="rev-row">
           <div class="rev-co"><span class="rev-tag">협력업체 B</span></div>
@@ -1847,7 +1845,6 @@ a { text-decoration: none; color: inherit; }
             <span class="rev-value"><strong>216,254,600</strong><i>원</i></span>
             <span class="rev-meter"><span style="width:100%"></span></span>
           </div>
-          <div class="rev-feature"><span class="rev-cell-label">특징</span>최근 6개월 매출 사례</div>
         </div>
         <div class="rev-row">
           <div class="rev-co"><span class="rev-tag">협력업체 C</span></div>
@@ -1857,7 +1854,6 @@ a { text-decoration: none; color: inherit; }
             <span class="rev-value"><strong>74,525,300</strong><i>원</i></span>
             <span class="rev-meter"><span style="width:34.5%"></span></span>
           </div>
-          <div class="rev-feature"><span class="rev-cell-label">특징</span>1~2분기 누적 매출 사례</div>
         </div>
         <div class="rev-row">
           <div class="rev-co"><span class="rev-tag">협력업체 D</span></div>
@@ -1867,10 +1863,18 @@ a { text-decoration: none; color: inherit; }
             <span class="rev-value"><strong>71,346,850</strong><i>원</i></span>
             <span class="rev-meter"><span style="width:33.0%"></span></span>
           </div>
-          <div class="rev-feature"><span class="rev-cell-label">특징</span>1~2분기 누적 매출 사례</div>
+        </div>
+        <div class="rev-row">
+          <div class="rev-co"><span class="rev-tag">협력업체 E</span></div>
+          <div class="rev-period"><span class="rev-cell-label">정산 기간</span>2026.02 ~ 2026.06</div>
+          <div class="rev-amount">
+            <span class="rev-cell-label">총 매출</span>
+            <span class="rev-value"><strong>70,588,480</strong><i>원</i></span>
+            <span class="rev-meter"><span style="width:32.6%"></span></span>
+          </div>
         </div>
       </div>
-      <p class="rev-source">※ 세금계산서 발행분과 내부 정산 자료를 기준으로 정리한 수치이며, 협력업체별 정산 기간이 상이할 수 있습니다.</p>
+      <p class="rev-source">※ 세금계산서 발행분과 현금 매출을 포함한 내부 정산 자료를 기준으로 정리한 수치이며, 협력업체별 정산 기간이 상이할 수 있습니다.</p>
     </div>
     <p class="data-disclaimer reveal">실제 협력업체 사례이며, <strong>결과는 개인 역량·지역·현장 상황에 따라 달라질 수 있습니다.</strong></p>
     <div class="result-cta reveal">
