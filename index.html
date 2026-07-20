@@ -1437,6 +1437,25 @@ a { text-decoration: none; color: inherit; }
 
   /* ── 10. 하단 고정 버튼과 본문 겹침 방지 ── */
   body { padding-bottom: 92px; }
+
+  /* ── 11. 줄바꿈 균형 — 가운데 정렬 문장이 들쭉날쭉 끊기던 문제 개선 ── */
+  .sub-hero h1, .sec-title, .pi-text h3,
+  .roadmap-cell h4, .career-card h3, .result-item h4,
+  .rc-main, .rev-title, .ai-note,
+  .sec-sub, .sub-hero p, .market-intro { text-wrap: balance; }
+  .pi-text p, .market-insight p, .risk-panel p,
+  .result-item p, .pd-card-sub, .career-card > p { text-wrap: pretty; }
+
+  /* ── 12. 소제목·카드 제목과 본문의 위계 구분 강화 ── */
+  .sec-sub    { font-size: 18px; font-weight: 600; }  /* 설명글을 본문(17px)보다 크게 */
+  .pi-text h3 { font-size: 22px; }                    /* 카드 제목을 본문보다 확실히 크게 */
+  .pi-text p        { color: rgba(255,255,255,0.66); }/* 본문은 살짝 낮은 명도로 */
+  .market-insight p { color: rgba(255,255,255,0.72); }
+
+  /* ── 13. 실습 사진 갤러리 크게 (2열 → 1열 풀폭) ── */
+  .cur-gallery { grid-template-columns: 1fr; gap: 12px; }
+  .cur-shot { aspect-ratio: 16 / 9; }
+  .cur-shot figcaption { font-size: 15px; padding: 9px 16px; }
 }
 </style>
 </head>
