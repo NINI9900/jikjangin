@@ -1456,6 +1456,19 @@ a { text-decoration: none; color: inherit; }
   .cur-gallery { grid-template-columns: 1fr; gap: 12px; }
   .cur-shot { aspect-ratio: 16 / 9; }
   .cur-shot figcaption { font-size: 15px; padding: 9px 16px; }
+
+  /* ── 14. 01·02·03 문단 정렬 통일 (위치·폭이 제각각이던 문제) ──
+     .point-item 이 align-items:center 라서 텍스트 블록이 내용 폭에 맞춰
+     가운데로 놓여 문단마다 시작점·폭이 달랐음 → 왼쪽으로 꽉 채워 통일 */
+  .sec-point .point-item,
+  .sec-point .point-item.rev { align-items: stretch; }
+  .pi-text { width: 100%; }
+  .pi-badge { margin-left: 0; }
+
+  /* ── 15. 소제목 "숫자로 보는 철거 시장" 을 본문과 구분되는 제목으로 ── */
+  .rev-card-head span:not(.rev-badge) {
+    color: #fff; font-weight: 800; font-size: 18px; letter-spacing: -0.01em;
+  }
 }
 </style>
 </head>
